@@ -1,0 +1,74 @@
+/* Clean sizing template */
+.ui-icon {
+  width: var(--icon-size, 24px);
+  height: var(--icon-size, 24px);
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Color scaling styles */
+.brand-tiktok {
+  color: #010101;
+}
+.brand-pinterest {
+  color: #bd081c;
+}
+.brand-discord {
+  color: #5865f2;
+}
+.brand-facebook {
+  color: #1877f2;
+}
+.brand-twitter {
+  color: #1da1f2;
+}
+.brand-instagram {
+  color: #e1306c;
+}
+.brand-linkedin {
+  color: #0077b5;
+}
+.brand-youtube {
+  color: #ff0000;
+}
+.brand-twitch {
+  color: #9146ff;
+}
+.brand-telegram {
+  color: #0088cc;
+}
+.brand-whatsapp {
+  color: #25d366;
+}
+.brand-snapchat {
+  color: #fffc00;
+}
+.brand-reddit {
+  color: #ff4500;
+}
+.brand-tumblr {
+  color: #34526f;
+}
+.brand-github {
+  color: #181717;
+}
+.brand-medium {
+  color: #00ab6c;
+}
+.brand-dribbble {
+  color: #ea4c89;
+}
+.brand-behance {
+  color: #1769ff;
+}
+.brand-vimeo {
+  color: #1ab7ea;
+}
+.brand-tiktok {
+  color: #010101;
+}
+
+.sep {
+  height: 200px;
+  width: 100%;
+}

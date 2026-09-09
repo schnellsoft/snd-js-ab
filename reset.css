@@ -1,0 +1,73 @@
+/* 1. Global box model & margin reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. Responsive viewport & typographic baselines */
+html,
+body {
+    min-block-size: 100svh;
+    /* Prevents layout shifting on mobile layout tools */
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    /* Clean macOS rendering */
+}
+
+/* 3. Media elements responsive fallback */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* 4. Form mechanics inherit global fonts */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* 5. Modern text wrapping and safety overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    text-wrap: balance;
+    /* Beautiful multi-line title distribution */
+}
+
+p {
+    text-wrap: pretty;
+    /* Eliminates typographic orphans at paragraphs' ends */
+}
+
+/* 6. Root stacking context isolation for frameworks (React/NextJS) */
+#root,
+#__next {
+    isolation: isolate;
+}

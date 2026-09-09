@@ -1,3 +1,41 @@
+:root {
+  --icon-size: 24px;
+}
+
+.snd-icon-list-comp {
+  border: #ceb2b2 solid 1px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2px;
+}
+
+.snd-icon-list-ct {
+  flex-grow: 1;
+  padding: 2px;
+}
+
+.snd-icon-list {
+  list-style-type: none;
+}
+
+.snd-icon-list,
+.snd-icon-list-ct {
+  display: flex;
+}
+
+.snd-icon-list-item,
+.snd-icon-list-more {
+  /* border: #ceb2b2 solid 1px; */
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  flex-shrink: 0;
+}
+
 /* Clean sizing template */
 .ui-icon {
   width: var(--icon-size, 24px);
@@ -65,7 +103,7 @@
   color: #1ab7ea;
 }
 .brand-tiktok {
-  color: #010101;
+  color: #c5b5b5;
 }
 
 .sep {

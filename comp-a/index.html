@@ -4,13 +4,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Icons Presenter</title>
+    <link rel="stylesheet" href="../reset.css" />
+    <link rel="stylesheet" href="../styles.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <ul class="clist">
+    <header>
+      <h1>Icons Presenter</h1>
+    </header>
+    <section class="ct-demo">
+      <div class="snd-icon-list-comp" style="width: 70%; height: 77px">
+        <div class="snd-icon-list-more">M</div>
+        <div class="snd-icon-list-ct">
+          <ul class="snd-icon-list">
+            <li class="snd-icon-list-item">A1</li>
+            <li class="snd-icon-list-item">A2</li>
+            <li class="snd-icon-list-item">A3</li>
+            <li class="snd-icon-list-item">A4</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <div class="sep"></div>
+    <ul class="clist" style="color: #ccc">
       <li>
         <a href="#" class="brand-tiktok" aria-label="TikTok Profile">
-          <svg class="ui-icon"><use href="#icon-tiktok" /></svg>
+          <svg class="ui-icon">
+            <use href="./sprite.svg#icon-tiktok" style="color: #a5cc32" />
+          </svg>
+          AAAAAA
+        </a>
+      </li>
+      <li>
+        <a href="#" class="brand-tiktok" aria-label="TikTok Profile">
+          <svg class="ui-icon">
+            <use href="./sprite.svg#icon-trash" style="color: #a5cc32" />
+          </svg>
+          AAAAAA
         </a>
       </li>
     </ul>

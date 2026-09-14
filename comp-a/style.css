@@ -2,38 +2,80 @@
   --icon-size: 24px;
 }
 
-.snd-icon-list-comp {
+.snd-list-comp {
+  --snd-list-gap: 10px;
+  --snd-list-item-size: 50px;
+  width: 70%;
+  height: 77px;
   border: #ceb2b2 solid 1px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   padding: 2px;
+  min-width: 0;
 }
 
-.snd-icon-list-ct {
-  flex-grow: 1;
+.snd-list-more {
+  anchor-name: --snd-list-more;
+  flex-shrink: 0;
+  margin-inline: 5px;
+  background: none;
+  color: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+.snd-list-ct {
+  flex: 1 1 0;
+  min-width: 0;
   padding: 2px;
-}
-
-.snd-icon-list {
-  list-style-type: none;
-}
-
-.snd-icon-list,
-.snd-icon-list-ct {
   display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
-.snd-icon-list-item,
-.snd-icon-list-more {
-  /* border: #ceb2b2 solid 1px; */
-  width: 50px;
-  height: 50px;
+.snd-list {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  min-width: 0;
+  gap: var(--snd-list-gap);
+}
+
+.snd-list-item,
+.snd-list-more {
+  width: var(--snd-list-item-size);
+  height: var(--snd-list-item-size);
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 5px;
   flex-shrink: 0;
+}
+
+.snd-list-item[hidden],
+.snd-list-more[hidden] {
+  display: none;
+}
+
+.snd-list-overflow {
+  position-anchor: --snd-list-more;
+  position-area: block-end span-inline-end;
+  inset: auto;
+  position-try-fallbacks: flip-block, flip-inline;
+  margin: 0;
+  padding: 8px;
+  background: #1e1e1e;
+  color: inherit;
+  border: #ceb2b2 solid 1px;
+  gap: var(--snd-list-gap);
+}
+
+.snd-list-overflow:is(:popover-open, .\:popover-open, .is-open) {
+  display: flex;
+  flex-direction: column;
 }
 
 /* Clean sizing template */
@@ -48,60 +90,79 @@
 .brand-tiktok {
   color: #010101;
 }
+
 .brand-pinterest {
   color: #bd081c;
 }
+
 .brand-discord {
   color: #5865f2;
 }
+
 .brand-facebook {
   color: #1877f2;
 }
+
 .brand-twitter {
   color: #1da1f2;
 }
+
 .brand-instagram {
   color: #e1306c;
 }
+
 .brand-linkedin {
   color: #0077b5;
 }
+
 .brand-youtube {
   color: #ff0000;
 }
+
 .brand-twitch {
   color: #9146ff;
 }
+
 .brand-telegram {
   color: #0088cc;
 }
+
 .brand-whatsapp {
   color: #25d366;
 }
+
 .brand-snapchat {
   color: #fffc00;
 }
+
 .brand-reddit {
   color: #ff4500;
 }
+
 .brand-tumblr {
   color: #34526f;
 }
+
 .brand-github {
   color: #181717;
 }
+
 .brand-medium {
   color: #00ab6c;
 }
+
 .brand-dribbble {
   color: #ea4c89;
 }
+
 .brand-behance {
   color: #1769ff;
 }
+
 .brand-vimeo {
   color: #1ab7ea;
 }
+
 .brand-tiktok {
   color: #c5b5b5;
 }

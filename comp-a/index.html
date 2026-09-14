@@ -2,26 +2,36 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Icons Presenter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>Comp Presenter</title>
     <link rel="stylesheet" href="../reset.css" />
     <link rel="stylesheet" href="../styles.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
-      <h1>Icons Presenter</h1>
+      <h1>Comp Presenter</h1>
     </header>
     <section class="ct-demo">
-      <div class="snd-icon-list-comp" style="width: 70%; height: 77px">
-        <div class="snd-icon-list-more">M</div>
-        <div class="snd-icon-list-ct">
-          <ul class="snd-icon-list">
-            <li class="snd-icon-list-item">A1</li>
-            <li class="snd-icon-list-item">A2</li>
-            <li class="snd-icon-list-item">A3</li>
-            <li class="snd-icon-list-item">A4</li>
-          </ul>
+      <div class="snd-list-comp">
+        <button
+          type="button"
+          class="snd-list-more"
+          aria-label="More items"
+          aria-expanded="false"
+          popovertarget="snd-list-overflow"
+          hidden
+        >
+          M
+        </button>
+        <div id="snd-list-overflow" class="snd-list-overflow" popover="auto"></div>
+        <div class="snd-list-ct">
+          <div class="snd-list">
+            <div class="snd-list-item">A1</div>
+            <div class="snd-list-item">A2</div>
+            <div class="snd-list-item">A3</div>
+            <div class="snd-list-item">A4</div>
+          </div>
         </div>
       </div>
     </section>
@@ -60,5 +70,6 @@
         <use href="sprite.svg#icon-trash"></use>
       </svg>
     </span>
+    <script type="module" src="main.js"></script>
   </body>
 </html>

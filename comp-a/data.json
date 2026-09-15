@@ -1,5 +1,4 @@
 {
-  "touchDetection": false,
   "moreList": true,
   "baseline": "48px",
   "icons": [
@@ -7,13 +6,15 @@
       "name": "icon1",
       "label": "Icon 1",
       "description": "This is icon 1",
-      "link": ""
+      "aria-label": "Icon 1",
+      "link": "#"
     },
     {
       "name": "icon2",
       "label": "Icon 2",
       "description": "This is icon 2",
-      "link": ""
+      "aria-label": "Icon 2",
+      "link": "#"
     }
   ]
 }

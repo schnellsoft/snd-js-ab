@@ -3,14 +3,28 @@
   "baseline": "48px",
   "icons": [
     {
-      "name": "icon1",
+      "name": "facebook",
       "label": "Icon 1",
       "description": "This is icon 1",
       "aria-label": "Icon 1",
       "link": "#"
     },
     {
-      "name": "icon2",
+      "name": "instagram",
+      "label": "Icon 2",
+      "description": "This is icon 2",
+      "aria-label": "Icon 2",
+      "link": "#"
+    },
+    {
+      "name": "twitter",
+      "label": "Icon 2",
+      "description": "This is icon 2",
+      "aria-label": "Icon 2",
+      "link": "#"
+    },
+    {
+      "name": "linkedin",
       "label": "Icon 2",
       "description": "This is icon 2",
       "aria-label": "Icon 2",

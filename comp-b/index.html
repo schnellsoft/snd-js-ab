@@ -1,17 +1,84 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>Comp Presenter</title>
+    <link rel="stylesheet" href="../reset.css" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Comp Presenter</h1>
+    </header>
+    <section class="ct-demo">
+      <div class="snd-list-comp">
+        <button
+          type="button"
+          class="snd-list-hamburger"
+          aria-label="Open menu"
+          aria-expanded="false"
+          popovertarget="snd-menu-drawer"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <use href="sprite.svg#hamburger"></use>
+          </svg>
+        </button>
+        <div id="snd-menu-drawer" class="snd-menu-drawer" popover="auto"></div>
+        <button
+          type="button"
+          class="snd-list-more"
+          aria-label="More items"
+          aria-expanded="false"
+          popovertarget="snd-list-overflow"
+          hidden
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <use href="sprite.svg#morev"></use>
+          </svg>
+        </button>
+        <div id="snd-list-overflow" class="snd-list-overflow" popover="auto"></div>
+        <div class="snd-list-ct">
+          <nav class="snd-list" aria-label="Main menu"></nav>
+        </div>
+      </div>
+    </section>
+    <div class="sep"></div>
+    <ul class="clist" style="color: #ccc">
+      <li>
+        <a href="#" class="brand-tiktok" aria-label="TikTok Profile">
+          <svg class="ui-icon">
+            <use href="./sprite.svg#icon-tiktok" style="color: #a5cc32" />
+          </svg>
+          AAAAAA
+        </a>
+      </li>
+      <li>
+        <a href="#" class="brand-tiktok" aria-label="TikTok Profile">
+          <svg class="ui-icon">
+            <use href="./sprite.svg#icon-trash" style="color: #a5cc32" />
+          </svg>
+          AAAAAA
+        </a>
+      </li>
+    </ul>
+    <div class="sep"></div>
+    <button
+      style="color: #25d366; background: none; border: none; cursor: pointer"
+    >
+      <svg width="24" height="24">
+        <use href="sprite.svg#icon-whatsapp"></use>
+      </svg>
+      <span>Chat with us</span>
+    </button>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dan Second Component</title>
-  <link rel="stylesheet" href="../reset.css" />
-  <link rel="stylesheet" href="../styles.css" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-
-<body>
-  <h1>Dan Second Component</h1>
-</body>
-
+    <!-- Example: An active red delete icon -->
+    <span style="color: #ef4444">
+      <svg width="20" height="20">
+        <use href="sprite.svg#icon-trash"></use>
+      </svg>
+    </span>
+    <script type="module" src="main.js"></script>
+  </body>
 </html>

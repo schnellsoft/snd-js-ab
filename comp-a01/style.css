@@ -5,21 +5,30 @@
 
 
 .snd-list-comp {
-  --snd-list-gap: 10px;
+  --snd-list-gap: 5px;
   --snd-list-item-size: 50px;
   position: relative;
   width: 70%;
-  height: 77px;
   border: #ceb2b2 solid 1px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   padding: 2px;
   min-width: 0;
+  border-width: 0px;
+}
+
+.snd-list-comp * {
+  border-width: 0px;
 }
 
 .snd-list-more {
   flex-shrink: 0;
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-inline: 5px;
   background: none;
   color: inherit;
@@ -52,14 +61,57 @@
   gap: var(--snd-list-gap);
 }
 
-.snd-list-item,
-.snd-list-more {
-  width: var(--snd-list-item-size);
-  height: var(--snd-list-item-size);
+.snd-list-more svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+  color: currentColor;
+}
+
+.snd-list-item {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
+}
+
+.snd-list-link {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+  color: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.15s ease;
+}
+
+a.snd-list-link {
+  color: inherit;
+}
+
+.snd-list-link svg {
+  flex-shrink: 0;
+  display: block;
+  color: var(--snd-icon-color, currentColor);
+}
+
+.snd-list-label {
+  color: currentColor;
+}
+
+@media (orientation: portrait) and (max-width: 48em) {
+  .snd-list-label {
+    display: none;
+  }
+
+  .snd-list-link {
+    gap: 0;
+  }
+}
+
+a.snd-list-link:is(:hover, :focus-visible) {
+  color: #3eb489;
 }
 
 .snd-list-item[hidden],
@@ -74,6 +126,7 @@
   color: inherit;
   border: #ceb2b2 solid 1px;
   gap: var(--snd-list-gap);
+  border-width: 0px;
 }
 
 @supports (position-anchor: --foo) {

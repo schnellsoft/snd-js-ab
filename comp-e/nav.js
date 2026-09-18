@@ -598,7 +598,7 @@ export class Nav {
     const styles = getComputedStyle(main);
     const gap = Number.parseFloat(styles.columnGap || styles.gap) || 16;
     const width = main.clientWidth;
-    const minCard = 240;
+    const minCard = Number.parseFloat(styles.getPropertyValue("--ct-card-min-px")) || 240;
     if (width <= 0) {
       return 1;
     }

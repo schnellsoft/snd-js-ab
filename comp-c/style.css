@@ -1,0 +1,182 @@
+:root {
+  --icon-size: 24px;
+}
+
+.ct-demo {
+  position: fixed;
+  top: 0;
+  inset-inline: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+
+.ct-logo {
+  flex-shrink: 0;
+}
+
+.ct-logo-min {
+  display: block;
+}
+
+.ct-logo-max {
+  display: none;
+}
+
+.ct-user-log, .ct-user-logged img {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.ct-user-log img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 64em) {
+  .ct-logo-min {
+    display: none;
+  }
+
+  .ct-logo-max {
+    display: block;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 48em) {
+  .ct-logo {
+    width: 0;
+    min-width: 0;
+    overflow: hidden;
+    border-width: 0;
+    padding: 0;
+    margin: 0;
+  }
+
+  .ct-logo :is(.ct-logo-min, .ct-logo-max) {
+    display: none;
+  }
+}
+
+.ui-icon {
+  width: var(--icon-size, 24px);
+  height: var(--icon-size, 24px);
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.brand-tiktok {
+  color: #c5b5b5;
+}
+
+.sep {
+  height: 200px;
+  width: 100%;
+}
+
+.sep-min {
+  height: 10px;
+  width: 100%;
+}
+
+.ct-lang {
+  position: relative;
+  width: 100px;
+  height: 48px;
+  box-sizing: border-box;
+}
+
+.ct-lang-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.ct-lang-select,
+.ct-lang-select::picker(select) {
+  appearance: base-select;
+}
+
+.ct-lang-select {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 8px;
+  color: #f4f4f4;
+  background: #1e1e1e;
+  border: 1px solid #ceb2b2;
+  border-radius: 10px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.ct-lang-select:focus-visible {
+  outline: 2px solid #3eb489;
+  outline-offset: 2px;
+}
+
+.ct-lang-select::picker-icon {
+  color: #3eb489;
+}
+
+.ct-lang-select::picker(select) {
+  margin-block-start: 4px;
+  padding: 6px;
+  color: #f4f4f4;
+  background: #1e1e1e;
+  border: 1px solid #ceb2b2;
+  border-radius: 10px;
+  box-shadow: 0 12px 28px rgb(0 0 0 / 0.45);
+}
+
+.ct-lang-select button,
+.ct-lang-select selectedcontent,
+.ct-lang-select option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ct-lang-select option {
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.ct-lang-select option::checkmark {
+  display: none;
+}
+
+.ct-lang-select option:is(:hover, :focus-visible) {
+  background: #2a2a2a;
+}
+
+.ct-lang-select option:checked {
+  background: #2d4a40;
+  font-weight: 700;
+}
+
+.ct-lang-flag {
+  width: 22px;
+  height: 15px;
+  flex-shrink: 0;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgb(255 255 255 / 0.18);
+}
+
+.ct-lang-code {
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}

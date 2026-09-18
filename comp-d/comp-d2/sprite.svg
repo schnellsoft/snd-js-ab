@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="0" height="0">
+  <symbol id="facebook" viewBox="0 0 24 24" fill="none">
+    <path d="M14 8h3V4h-3c-3.314 0-6 2.686-6 6v3H5v4h3v7h4v-7h3l1-4h-4v-3c0-1.105.895-2 2-2Z" fill="currentColor" />
+  </symbol>
+  <symbol id="whatsapp" viewBox="0 0 24 24" fill="none">
+    <path d="M20.52 3.48A11.92 11.92 0 0 0 12.05 0C5.46 0 .1 5.36.1 11.95c0 2.1.55 4.15 1.6 5.95L0 24l6.27-1.64a11.9 11.9 0 0 0 5.78 1.47h.01c6.59 0 11.95-5.36 11.95-11.95 0-3.19-1.24-6.18-3.49-8.4ZM12.05 21.8a9.92 9.92 0 0 1-5.06-1.39l-.36-.21-3.72.98.99-3.63-.24-.37a9.91 9.91 0 1 1 8.39 4.62Zm5.44-7.42c-.3-.15-1.78-.88-2.06-.98-.28-.1-.48-.15-.68.15-.2.3-.78.98-.96 1.18-.18.2-.36.22-.66.07a8.2 8.2 0 0 1-2.41-1.49 9.07 9.07 0 0 1-1.67-2.08c-.17-.3-.02-.46.13-.61.14-.14.3-.36.45-.54.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.68-1.63-.93-2.24-.24-.57-.49-.49-.68-.5h-.58c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.08 1.78-.73 2.03-1.44.25-.71.25-1.32.18-1.44-.07-.12-.27-.2-.57-.35Z" fill="currentColor" />
+  </symbol>
+  <symbol id="instagram" viewBox="0 0 24 24" fill="none">
+    <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5Zm0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5ZM17.25 6A1.25 1.25 0 1 1 16 7.25 1.25 1.25 0 0 1 17.25 6Z" fill="currentColor" />
+  </symbol>
+  <symbol id="phonecall" viewBox="0 0 24 24" fill="none">
+    <path d="M6.62 10.79a15.53 15.53 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.32.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2Z" fill="currentColor" />
+  </symbol>
+  <symbol id="location" viewBox="0 0 24 24" fill="none">
+    <path d="M12 2a8 8 0 0 0-8 8c0 5.65 6.65 11.37 7.41 12.01a.9.9 0 0 0 1.18 0C13.35 21.37 20 15.65 20 10a8 8 0 0 0-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z" fill="currentColor" />
+  </symbol>
+  <symbol id="logo" viewBox="0 0 390 125">
+    <image href="data:image/png;base64,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" width="390" height="125" />
+  </symbol>
+  <symbol id="twitter" viewBox="0 0 24 24" fill="none">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" fill="currentColor" />
+  </symbol>
+  <symbol id="linkedin" viewBox="0 0 24 24" fill="none">
+    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0z" fill="currentColor" />
+  </symbol>
+  <symbol id="morev" viewBox="0 0 24 24" fill="none">
+    <path d="M12 6a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm0 7.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM12 21a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" fill="currentColor" />
+  </symbol>
+  <symbol id="hamburger" viewBox="0 0 24 24" fill="none">
+    <path d="M4 6h16v2H4V6Zm0 5h16v2H4v-2Zm0 5h16v2H4v-2Z" fill="currentColor" />
+  </symbol>
+  <symbol id="chevron-right" viewBox="0 0 24 24" fill="none">
+    <path d="M9.5 6.5 15 12l-5.5 5.5-1.4-1.4L12.2 12 8.1 7.9l1.4-1.4Z" fill="currentColor" />
+  </symbol>
+  <symbol id="chevron-down" viewBox="0 0 24 24" fill="none">
+    <path d="M6.5 9.5 12 15l5.5-5.5-1.4-1.4L12 12.2 7.9 8.1 6.5 9.5Z" fill="currentColor" />
+  </symbol>
+  <symbol id="icon-left" viewBox="0 0 24 24" fill="none">
+    <path d="M14.5 6.5 9 12l5.5 5.5 1.4-1.4L11.8 12 15.9 7.9 14.5 6.5Z" fill="currentColor" />
+  </symbol>
+  <symbol id="icon-right" viewBox="0 0 24 24" fill="none">
+    <path d="M9.5 6.5 15 12l-5.5 5.5-1.4-1.4L12.2 12 8.1 7.9 9.5 6.5Z" fill="currentColor" />
+  </symbol>
+  <symbol id="icon-generic" viewBox="0 0 24 24" fill="none">
+    <path d="M12 2.2 20.3 7v10L12 21.8 3.7 17V7L12 2.2Zm0 2.4L5.7 8.1v7.8L12 19.4l6.3-3.5V8.1L12 4.6Z" fill="currentColor" />
+    <path d="M12 8.2 15.8 10.4v4.2L12 16.8 8.2 14.6v-4.2L12 8.2Z" fill="currentColor" />
+  </symbol>
+</svg>

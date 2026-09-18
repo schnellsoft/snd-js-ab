@@ -1,0 +1,175 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  margin-bottom: 0;
+  padding: max(0.75rem, env(safe-area-inset-top)) 1rem 0.75rem;
+  background-color: #121212;
+}
+
+svg.icon-sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.left-button,
+.right-button {
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #cccccc;
+}
+
+.left-button svg,
+.right-button svg {
+  width: 24px;
+  height: 24px;
+  max-width: none;
+  display: block;
+  flex-shrink: 0;
+  fill: currentColor;
+}
+
+.ct-demo {
+  perspective: 70rem;
+}
+
+.ct-demo .ct-card,
+.ct-demo .ct-card * {
+  border: none;
+}
+
+.ct-card {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 350px;
+  min-block-size: 14.5rem;
+  transform: translateY(-10px);
+  transform-style: preserve-3d;
+  touch-action: pan-y;
+}
+
+.ct-card-inner {
+  position: relative;
+  min-block-size: 14.5rem;
+  transform-style: preserve-3d;
+}
+
+.ct-card-inner-live {
+  will-change: transform;
+}
+
+.ct-card-front-face,
+.ct-card-back-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.25rem;
+  box-sizing: border-box;
+  padding: 1.5rem 1.5rem 1.25rem;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  color: #3eb489;
+  color-scheme: dark;
+  background:
+    linear-gradient(180deg, rgb(62 180 137 / 0.1), transparent 42%),
+    linear-gradient(155deg, #2b2b2b 0%, #171717 100%);
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, #3eb489 26%, transparent),
+    0 10px 20px rgb(0 0 0 / 0.3),
+    0 20px 50px rgb(0 0 0 / 0.5);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.ct-card-front-face {
+  transform: rotateY(0deg);
+}
+
+.ct-card-back-face {
+  transform: rotateY(180deg);
+}
+
+.ct-demo .ct-card-front-face,
+.ct-demo .ct-card-back-face {
+  border: 1px solid color-mix(in srgb, #3eb489 28%, #2a2a2a);
+}
+
+.ct-card-bg {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  right: 0;
+  width: 10.5rem;
+  height: 10.5rem;
+  max-width: none;
+  transform: translateY(-50%);
+  color: #2a7a5d;
+  fill: currentColor;
+  opacity: 1;
+  pointer-events: none;
+}
+
+.ct-card-title,
+.ct-card-price {
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 0 4px rgb(0 0 0 / 0.8);
+}
+
+.ct-card-title {
+  margin: 0;
+  max-inline-size: 70%;
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.25;
+  color: #3eb489;
+}
+
+.ct-card-price {
+  margin: 0;
+  margin-block-start: auto;
+  padding-block-start: 0.9rem;
+  font-size: 1.85rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: #7ee0bc;
+}
+
+.ct-demo .ct-card .ct-card-price {
+  border: none;
+  border-block-start: 1px solid color-mix(in srgb, #3eb489 28%, transparent);
+}

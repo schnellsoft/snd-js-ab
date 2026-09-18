@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>Comp Presenter</title>
+    <link rel="stylesheet" href="../../reset.css" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <button class="left-button" type="button" aria-label="Previous">
+        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <use href="#icon-left" fill="currentColor"></use>
+        </svg>
+      </button>
+      <button class="right-button" type="button" aria-label="Next">
+        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <use href="#icon-right" fill="currentColor"></use>
+        </svg>
+      </button>
+    </header>
+    <section class="ct-demo">
+      <div class="ct-card">
+        <svg class="ct-card-bg" width="160" height="160" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <use href="#icon-generic" fill="currentColor"></use>
+        </svg>
+        <h2 class="ct-card-title">Standard Plan</h2>
+        <p class="ct-card-price">$49</p>
+      </div>
+      
+    </section>
+    <div class="sep"></div>
+    <div class="sep-min"></div>
+    <div class="sep"></div>
+    <svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true" focusable="false">
+      <symbol id="icon-left" viewBox="0 0 24 24" fill="none">
+        <path d="M14.5 6.5 9 12l5.5 5.5 1.4-1.4L11.8 12 15.9 7.9 14.5 6.5Z" fill="currentColor" />
+      </symbol>
+      <symbol id="icon-right" viewBox="0 0 24 24" fill="none">
+        <path d="M9.5 6.5 15 12l-5.5 5.5-1.4-1.4L12.2 12 8.1 7.9 9.5 6.5Z" fill="currentColor" />
+      </symbol>
+      <symbol id="icon-generic" viewBox="0 0 24 24" fill="none">
+        <path d="M12 2.2 20.3 7v10L12 21.8 3.7 17V7L12 2.2Zm0 2.4L5.7 8.1v7.8L12 19.4l6.3-3.5V8.1L12 4.6Z" fill="currentColor" />
+        <path d="M12 8.2 15.8 10.4v4.2L12 16.8 8.2 14.6v-4.2L12 8.2Z" fill="currentColor" />
+      </symbol>
+    </svg>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

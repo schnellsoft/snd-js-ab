@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>Comp Presenter</title>
+    <link rel="stylesheet" href="../reset.css" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Comp Presenter</h1>
+    </header>
+    <section class="ct-demo">
+      <div class="ct-logo">
+        <div class="ct-logo-min">Minim</div>
+        <div class="ct-logo-max">Maximum Logo</div>
+      </div>
+      
+    </section>
+    <div class="sep"></div>
+    <div class="ct-lang">
+      <label class="ct-lang-label" for="ct-lang-select">Language</label>
+      <select class="ct-lang-select" id="ct-lang-select" name="language">
+        <button>
+          <selectedcontent></selectedcontent>
+        </button>
+        <option value="ro" aria-label="Romanian" selected>
+          <svg class="ct-lang-flag" viewBox="0 0 24 16" aria-hidden="true">
+            <rect width="8" height="16" fill="#002b7f" />
+            <rect x="8" width="8" height="16" fill="#fcd116" />
+            <rect x="16" width="8" height="16" fill="#ce1126" />
+          </svg>
+          <span class="ct-lang-code">RO</span>
+        </option>
+        <option value="bg" aria-label="Bulgarian">
+          <svg class="ct-lang-flag" viewBox="0 0 24 16" aria-hidden="true">
+            <rect width="24" height="5.34" fill="#ffffff" />
+            <rect y="5.33" width="24" height="5.34" fill="#00966e" />
+            <rect y="10.66" width="24" height="5.34" fill="#d62612" />
+          </svg>
+          <span class="ct-lang-code">BG</span>
+        </option>
+        <option value="en" aria-label="English">
+          <svg class="ct-lang-flag" viewBox="0 0 60 30" aria-hidden="true">
+            <rect width="60" height="30" fill="#012169" />
+            <path d="M0 0 60 30M60 0 0 30" stroke="#fff" stroke-width="6" />
+            <path d="M0 0 60 30M60 0 0 30" stroke="#c8102e" stroke-width="2" />
+            <path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10" />
+            <path d="M30 0v30M0 15h60" stroke="#c8102e" stroke-width="6" />
+          </svg>
+          <span class="ct-lang-code">ENG</span>
+        </option>
+      </select>
+    </div>
+    <div class="sep-min"></div>
+    <div class="ct-user-log">
+      <img src="login.svg" alt="Add user" width="48" height="48" />
+    </div>
+    <div class="sep-min"></div>
+    <div class="ct-user-logged">
+      <img src="logged.svg" alt="Add user" width="48" height="48" />
+    </div>
+    <div class="sep"></div>
+    <ul class="clist" style="color: #ccc">
+      <li>
+        <a href="#" class="brand-tiktok" aria-label="TikTok Profile">
+          <svg class="ui-icon">
+            <use href="./sprite.svg#icon-tiktok" style="color: #a5cc32" />
+          </svg>
+          AAAAAA
+        </a>
+      </li>
+      <li>
+        <a href="#" class="brand-tiktok" aria-label="TikTok Profile">
+          <svg class="ui-icon">
+            <use href="./sprite.svg#icon-trash" style="color: #a5cc32" />
+          </svg>
+          AAAAAA
+        </a>
+      </li>
+    </ul>
+    <div class="sep"></div>
+    <button
+      style="color: #25d366; background: none; border: none; cursor: pointer"
+    >
+      <svg width="24" height="24">
+        <use href="sprite.svg#icon-whatsapp"></use>
+      </svg>
+      <span>Chat with us</span>
+    </button>
+
+    <!-- Example: An active red delete icon -->
+    <span style="color: #ef4444">
+      <svg width="20" height="20">
+        <use href="sprite.svg#icon-trash"></use>
+      </svg>
+    </span>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

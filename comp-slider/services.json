@@ -1,0 +1,1228 @@
+{
+  "recommended": [
+    {
+      "name": "Platon retroincizal",
+      "price": 1300,
+      "currency": "RON"
+    },
+    {
+      "name": "Adăugare dinte în proteză",
+      "price": 200,
+      "currency": "RON"
+    },
+    {
+      "name": "Coroană ceramic pe suport de oxid de zirnocniu",
+      "price": 1200,
+      "currency": "RON"
+    },
+    {
+      "name": "Consultație medic specialist",
+      "price": 200,
+      "currency": "RON"
+    },
+    {
+      "name": "Obturatie coronara CIS dinte temporar",
+      "price": 130,
+      "currency": "RON"
+    },
+    {
+      "name": "Lucrare definitiva ALL ON 6 (metalo-ceramica)",
+      "price": 17000,
+      "currency": "RON"
+    },
+    {
+      "name": "Extracție pluriradicular",
+      "price": 300,
+      "currency": "RON"
+    },
+    {
+      "name": "Completare imobilizare",
+      "price": 100,
+      "currency": "RON"
+    },
+    {
+      "name": "Consultație primară",
+      "price": 50,
+      "currency": "RON"
+    },
+    {
+      "name": "Obturatie coronara compozit dinte temporar",
+      "price": 160,
+      "currency": "RON"
+    },
+    {
+      "name": "Obturatie de canal pluriradiculari",
+      "price": 220,
+      "currency": "RON"
+    },
+    {
+      "name": "Schimb arc",
+      "price": 100,
+      "currency": "RON"
+    },
+    {
+      "name": "Sigilare dinte permanent",
+      "price": 150,
+      "currency": "RON"
+    },
+    {
+      "name": "Proteza mobila Biodentaplast/Molloplast",
+      "price": 2400,
+      "currency": "RON"
+    },
+    {
+      "name": "Extractie dinte temporar pluriradicular imobil",
+      "price": 150,
+      "currency": "RON"
+    },
+    {
+      "name": "Fațetare directă",
+      "price": 300,
+      "currency": "RON"
+    },
+    {
+      "name": "Aplicare diga",
+      "price": 50,
+      "currency": "RON"
+    }
+  ],
+  "categories": [
+    {
+      "name": "Consultații",
+      "services": [
+        {
+          "name": "Consultație chirurgie / implantologie și plan de tratament",
+          "price": 100,
+          "currency": "RON"
+        },
+        {
+          "name": "Consultație primară",
+          "price": 50,
+          "currency": "RON"
+        },
+        {
+          "name": "Consultație și plan tratament",
+          "price": 100,
+          "currency": "RON"
+        },
+        {
+          "name": "Consultație și plan de tratament ortodonție",
+          "price": 200,
+          "currency": "RON"
+        },
+        {
+          "name": "Scanare intraorala",
+          "price": 200,
+          "currency": "RON"
+        }
+      ]
+    },
+    {
+      "name": "Profilaxie",
+      "services": [
+        {
+          "name": "Detartraj ultrasunete/arcadă",
+          "price": 100,
+          "currency": "RON"
+        },
+        {
+          "name": "Pachet igienizare (detartraj, periaj, airflow)",
+          "price": 350,
+          "currency": "RON"
+        },
+        {
+          "name": "Periaj profesional ambele arcade",
+          "price": 100,
+          "currency": "RON"
+        },
+        {
+          "name": "Airflow",
+          "price": 120,
+          "currency": "RON"
+        },
+        {
+          "name": "Sigilare șanțuri și fosete",
+          "price": 100,
+          "currency": "RON"
+        },
+        {
+          "name": "Sigilare lărgită",
+          "price": 120,
+          "currency": "RON"
+        },
+        {
+          "name": "Aplicare desensibilizant / dinte",
+          "price": 40,
+          "currency": "RON"
+        },
+        {
+          "name": "Detartraj+periaj",
+          "price": 300,
+          "currency": "RON"
+        }
+      ]
+    },
+    {
+      "name": "Odontoterapie",
+      "services": [
+        {
+          "name": "Obturație compozit cls. I (1 suprafață)",
+          "price": 250,
+          "currency": "RON"
+        },
+        {
+          "name": "Obturație compozit cls. II (2 suprafețe)",
+          "price": 300,
+          "currency": "RON"
+        },
+        {
+          "name": "Obturație compozit cls. III, cls. IV (dinți frontali)",
+          "price": 350,
+          "currency": "RON"
+        },
+        {
+          "name": "Obturație extinsă",
+          "price": 300,
+          "currency": "RON"
+        },
+        {
+          "name": "Obturație compozit cls. V (colet)",
+          "price": 200,
+          "currency": "RON"
+        },
+        {
+          "name": "Obturație bază",
+          "price": 50,
+          "currency": "RON"
+        },
+        {
+          "name": "Obturație glassionomer",
+          "price": 180,
+          "currency": "RON"
+        },
+        {
+          "name": "Coafaj direct",
+          "price": 100,
+          "currency": "RON"
+        },
+        {
+          "name": "Obturație provizorie",
+          "price": 50,
+          "currency": "RON"
+        },
+        {
+          "name": "Obturații frontale",
+          "price": "250 - 350",
+          "currency": "RON"
+        }
+      ]
+    },
+    {
+      "name": "Endodonție",
+      "services": [
+        {
+          "name": "Indepartare corp strain canal",
+          "price": 150,
+          "currency": "RON"
+        },
+        {
+          "name": "Dezobturare canal",
+          "price": 150,
+          "currency": "RON"
+        },
+        {
+          "name": "Pansament antiseptic/antibiotic",
+          "price": 50,
+          "currency": "RON"
+        },
+        {
+          "name": "Extirpare devitala",
+          "price": 150,
+          "currency": "RON"
+        },
+        {
+          "name": "Tratament gangrene/sedinta",
+          "price": 60,
+          "currency": "RON"
+        },
+        {
+          "name": "Obturatie de canal pluriradiculari",
+          "price": 220,
+          "currency": "RON"
+        },
+        {
+          "name": "Obturatie de canal monoradiculari",
+          "price": 150,
+          "currency": "RON"
+        },
+        {
+          "name": "Extirpare vitala pluriradiculara/ canal",
+          "price": 100,
+          "currency": "RON"
+        },
+        {
+          "name": "Drenaj endodontic",
+          "price": 100,
+          "currency": "RON"
+        },
+        {
+          "name": "Indepartare corp strain canal",
+          "price": 150,
+          "currency": "RON"
+        },
+        {
+          "name": "Aplicare diga",
+          "price": 50,
+          "currency": "RON"
+        },
+        {
+          "name": "Pansament calmant",
+          "price": 100,
+          "currency": "RON"
+        }
+      ],
+      "subcategories": [
+        {
+          "name": "Tratamente cu microscop",
+          "services": [
+            {
+              "name": "Pivot fibră sticlă",
+              "price": 300,
+              "currency": "RON"
+            },
+            {
+              "name": "Albire internă",
+              "price": 250,
+              "currency": "RON"
+            },
+            {
+              "name": "Îndepărtare corp străin",
+              "price": "150 - 250",
+              "currency": "RON"
+            },
+            {
+              "name": "Îndepărtare dentatus",
+              "price": "150 - 200",
+              "currency": "RON"
+            },
+            {
+              "name": "Îndepărtare pivot metalic",
+              "price": 200,
+              "currency": "RON"
+            },
+            {
+              "name": "Închidere perforație MTA",
+              "price": 150,
+              "currency": "RON"
+            },
+            {
+              "name": "Retratament și obturație de canal pluriradicular",
+              "price": 800,
+              "currency": "RON"
+            },
+            {
+              "name": "Retratament și obturație de canal biradicular",
+              "price": 650,
+              "currency": "RON"
+            },
+            {
+              "name": "Retratament și obturație de canal monoradicular",
+              "price": 550,
+              "currency": "RON"
+            },
+            {
+              "name": "Tratament și obturație de canal pluriradicular",
+              "price": 750,
+              "currency": "RON"
+            },
+            {
+              "name": "Tratament și obturație de canal biradicular",
+              "price": 550,
+              "currency": "RON"
+            },
+            {
+              "name": "Tratament și obturație de canal monoradicular",
+              "price": 450,
+              "currency": "RON"
+            },
+            {
+              "name": "Obturatie armata",
+              "price": 220,
+              "currency": "RON"
+            },
+            {
+              "name": "Refacere perete",
+              "price": 100,
+              "currency": "RON"
+            },
+            {
+              "name": "Coafaj direct MTA",
+              "price": "300 - 400",
+              "currency": "RON"
+            }
+          ]
+        },
+        {
+          "name": "Tratamente fără microscop",
+          "services": [
+            {
+              "name": "Pansament antiseptic",
+              "price": 100,
+              "currency": "RON"
+            },
+            {
+              "name": "Tratament molar",
+              "price": 500,
+              "currency": "RON"
+            },
+            {
+              "name": "Tratament biradicular",
+              "price": 400,
+              "currency": "RON"
+            },
+            {
+              "name": "Tratament monoradicular",
+              "price": 300,
+              "currency": "RON"
+            },
+            {
+              "name": "Extirpare în urgență",
+              "price": 150,
+              "currency": "RON"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Protetică dentară",
+      "subcategories": [
+        {
+          "name": "Protetică fixă",
+          "services": [
+            {
+              "name": "Reparație ceramică",
+              "price": 300,
+              "currency": "RON"
+            },
+            {
+              "name": "Inlay Compozit",
+              "price": 600,
+              "currency": "RON"
+            },
+            {
+              "name": "Inlay Zirconiu",
+              "price": 850,
+              "currency": "RON"
+            },
+            {
+              "name": "Cimentare definitivă / element",
+              "price": 30,
+              "currency": "RON"
+            },
+            {
+              "name": "RCR capsa Reihn",
+              "price": 450,
+              "currency": "RON"
+            },
+            {
+              "name": "RCR fibră de sticlă",
+              "price": 270,
+              "currency": "RON"
+            },
+            {
+              "name": "Model de studiu",
+              "price": 100,
+              "currency": "RON"
+            },
+            {
+              "name": "Refacere bont protetic",
+              "price": 100,
+              "currency": "RON"
+            },
+            {
+              "name": "Ablație RCR",
+              "price": 150,
+              "currency": "RON"
+            },
+            {
+              "name": "Ablație coroană",
+              "price": 100,
+              "currency": "RON"
+            },
+            {
+              "name": "Coroană zirconiu integral pe implant",
+              "price": 1500,
+              "currency": "RON"
+            },
+            {
+              "name": "Coroană total fizionomică metalo-ceramică pe implant",
+              "price": 1200,
+              "currency": "RON"
+            },
+            {
+              "name": "Coroană zirconiu integral",
+              "price": 1400,
+              "currency": "RON"
+            },
+            {
+              "name": "Coroană ceramic pe suport de oxid de zirnocniu",
+              "price": 1200,
+              "currency": "RON"
+            },
+            {
+              "name": "Coroană MC pe implant",
+              "price": 1200,
+              "currency": "RON"
+            },
+            {
+              "name": "Bont protetic angulant/calcinabil Megagen",
+              "price": 60,
+              "currency": "EUR"
+            },
+            {
+              "name": "Bont protetic drept implant Megagen",
+              "price": 50,
+              "currency": "EUR"
+            },
+            {
+              "name": "Coroană total fizionomică metalo-ceramică",
+              "price": 850,
+              "currency": "RON"
+            },
+            {
+              "name": "Coroană metalo-ceramică parțial fizionomică",
+              "price": 600,
+              "currency": "RON"
+            },
+            {
+              "name": "Coroană integrală metalică",
+              "price": 500,
+              "currency": "RON"
+            },
+            {
+              "name": "Coroană PMMA",
+              "price": 300,
+              "currency": "RON"
+            },
+            {
+              "name": "Coroană provizorie (metodă directă)",
+              "price": 150,
+              "currency": "RON"
+            },
+            {
+              "name": "Restaurare coroană-radiculară indirectă",
+              "price": 350,
+              "currency": "RON"
+            },
+            {
+              "name": "Punte metalo-ceramica cimentata (6 implanturi)",
+              "price": 12000,
+              "currency": "RON"
+            },
+            {
+              "name": "Lucrare definitiva ALL ON 6 (Titan-Zirconiu)",
+              "price": 22000,
+              "currency": "RON"
+            },
+            {
+              "name": "Lucrare definitiva ALL ON 6 (metalo-ceramica)",
+              "price": 17000,
+              "currency": "RON"
+            }
+          ]
+        },
+        {
+          "name": "Protetică mobilă",
+          "services": [
+            {
+              "name": "Garnituri culise/teflon",
+              "price": 200,
+              "currency": "RON"
+            },
+            {
+              "name": "Adăugare dinte în proteză",
+              "price": 200,
+              "currency": "RON"
+            },
+            {
+              "name": "Înlocuire croset",
+              "price": 150,
+              "currency": "RON"
+            },
+            {
+              "name": "Reparație proteză",
+              "price": 250,
+              "currency": "RON"
+            },
+            {
+              "name": "Rebazare proteză",
+              "price": 350,
+              "currency": "RON"
+            },
+            {
+              "name": "Proteză Kemeny",
+              "price": 400,
+              "currency": "RON"
+            },
+            {
+              "name": "Gutieră bruxism (ambele arcade)",
+              "price": 700,
+              "currency": "RON"
+            },
+            {
+              "name": "Proteză scheletată unilaterală",
+              "price": 1600,
+              "currency": "RON"
+            },
+            {
+              "name": "Supraproteza pe 4 implanturi",
+              "price": 9000,
+              "currency": "RON"
+            },
+            {
+              "name": "Proteză scheletată cu sisteme speciale (culise/capse)",
+              "price": 3000,
+              "currency": "RON"
+            },
+            {
+              "name": "Proteză total / parțial acrilică cu armătură metalică",
+              "price": 1400,
+              "currency": "RON"
+            },
+            {
+              "name": "Proteză totală / parțial acrilică",
+              "price": 1750,
+              "currency": "RON"
+            },
+            {
+              "name": "Proteza mobila Biodentaplast/Molloplast",
+              "price": 2400,
+              "currency": "RON"
+            },
+            {
+              "name": "Garnituri culise/teflon",
+              "price": 200,
+              "currency": "RON"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chirurgie dento-alveolară",
+      "services": [
+        {
+          "name": "Tratament pericoronarită",
+          "price": 100,
+          "currency": "RON"
+        },
+        {
+          "name": "Incizie abces+ control postoperator",
+          "price": 200,
+          "currency": "RON"
+        },
+        {
+          "name": "Tratament alveolită",
+          "price": 100,
+          "currency": "RON"
+        },
+        {
+          "name": "Suprimare fire",
+          "price": 30,
+          "currency": "RON"
+        },
+        {
+          "name": "Sutură",
+          "price": 50,
+          "currency": "RON"
+        },
+        {
+          "name": "Anestezie",
+          "price": 50,
+          "currency": "RON"
+        },
+        {
+          "name": "Anatomie patologică",
+          "price": 250,
+          "currency": "RON"
+        },
+        {
+          "name": "Excizie mici tumori",
+          "price": "300 - 600",
+          "currency": "RON"
+        },
+        {
+          "name": "PRP/2 eprubete",
+          "price": 500,
+          "currency": "RON"
+        },
+        {
+          "name": "PRP / eprubetă",
+          "price": 300,
+          "currency": "RON"
+        },
+        {
+          "name": "Regularizare creastă alveolară / cadran",
+          "price": 400,
+          "currency": "RON"
+        },
+        {
+          "name": "Decapusonare",
+          "price": 250,
+          "currency": "RON"
+        },
+        {
+          "name": "Gingivoplastie / gingivectomie / dinte",
+          "price": 150,
+          "currency": "RON"
+        },
+        {
+          "name": "Frenotomie / frenectomie",
+          "price": 350,
+          "currency": "RON"
+        },
+        {
+          "name": "Chistectomie cu rezecție apicală",
+          "price": 550,
+          "currency": "RON"
+        },
+        {
+          "name": "Chistectomie cu extracție",
+          "price": 400,
+          "currency": "RON"
+        },
+        {
+          "name": "Rezecție apicală",
+          "price": 500,
+          "currency": "RON"
+        },
+        {
+          "name": "Extracție cu plastia comunicării oro-sinusale",
+          "price": 450,
+          "currency": "RON"
+        },
+        {
+          "name": "Extracție cu alveolotomie",
+          "price": 450,
+          "currency": "RON"
+        },
+        {
+          "name": "Extracție canin inclus",
+          "price": "500 - 700",
+          "currency": "RON"
+        },
+        {
+          "name": "Extracție molar de minte semiinclus/inclus",
+          "price": "500 - 1200",
+          "currency": "RON"
+        },
+        {
+          "name": "Extracție molar de minte erupt sup/inf",
+          "price": 400,
+          "currency": "RON"
+        },
+        {
+          "name": "Extracție pluriradicular",
+          "price": 300,
+          "currency": "RON"
+        },
+        {
+          "name": "Extracție monoradicular",
+          "price": 230,
+          "currency": "RON"
+        }
+      ]
+    },
+    {
+      "name": "Implantologie",
+      "services": [
+        {
+          "name": "Descoperire implant",
+          "price": 100,
+          "currency": "RON"
+        },
+        {
+          "name": "Implant Straumann (cu bont protetic)",
+          "price": 880,
+          "currency": "EUR"
+        },
+        {
+          "name": "Implant Bredent (cu bont protetic)",
+          "price": 700,
+          "currency": "EUR"
+        },
+        {
+          "name": "Implant Megagen AnyOne (cu bont protetic)",
+          "price": 500,
+          "currency": "EUR"
+        },
+        {
+          "name": "Sinus lift bilateral",
+          "price": 1500,
+          "currency": "EUR"
+        },
+        {
+          "name": "Sinus lift unilateral",
+          "price": 750,
+          "currency": "EUR"
+        },
+        {
+          "name": "Adiție osoasă tip Split",
+          "price": 500,
+          "currency": "EUR"
+        },
+        {
+          "name": "Adiție osoasă os autoog și membrane neresorbabile",
+          "price": "500 - 600",
+          "currency": "EUR"
+        },
+        {
+          "name": "Implant KOS",
+          "price": 400,
+          "currency": "EUR"
+        }
+      ]
+    },
+    {
+      "name": "Paradontologie",
+      "services": [
+        {
+          "name": "Tratament abces parodontal (include si AB acasa)",
+          "price": 300,
+          "currency": "RON"
+        },
+        {
+          "name": "AB(TM/Colutoriu acasa)",
+          "price": 50,
+          "currency": "RON"
+        },
+        {
+          "name": "Tratament colotoriu acasa",
+          "price": 100,
+          "currency": "RON"
+        },
+        {
+          "name": "Decontaminare laser per arcada",
+          "price": 300,
+          "currency": "RON"
+        },
+        {
+          "name": "Chiuretaj cu laser ambele arcade",
+          "price": 2500,
+          "currency": "RON"
+        },
+        {
+          "name": "Chiuretaj cu laser per arcada",
+          "price": 1250,
+          "currency": "RON"
+        },
+        {
+          "name": "Chiuretaj cu laser per dinte",
+          "price": 150,
+          "currency": "RON"
+        },
+        {
+          "name": "Tratament abces parodontal",
+          "price": 300,
+          "currency": "RON"
+        },
+        {
+          "name": "Frenectomie",
+          "price": 500,
+          "currency": "RON"
+        },
+        {
+          "name": "Gingivectomie",
+          "price": 100,
+          "currency": "RON"
+        },
+        {
+          "name": "Completare imobilizare",
+          "price": 100,
+          "currency": "RON"
+        },
+        {
+          "name": "Imobilizare (fibra metalica sau fibra de sticla)",
+          "price": 500,
+          "currency": "RON"
+        },
+        {
+          "name": "Grefa tesut conjuctiv 2-6 dinti",
+          "price": "1500 - 2000",
+          "currency": "RON"
+        },
+        {
+          "name": "Grefa tesut conjuctiv 1-2 dinti",
+          "price": 1000,
+          "currency": "RON"
+        },
+        {
+          "name": "Grefa gingivala libera",
+          "price": 1500,
+          "currency": "RON"
+        },
+        {
+          "name": "Regenerare tisulara ghidata",
+          "price": 1000,
+          "currency": "RON"
+        },
+        {
+          "name": "Aplicare material Edmogain (per dinte)",
+          "price": 400,
+          "currency": "RON"
+        },
+        {
+          "name": "Chiuretaj parodontal in camp deschis (per dinte)",
+          "price": 250,
+          "currency": "RON"
+        },
+        {
+          "name": "Chiuretaj parodontal in camp inchis (per dinte)",
+          "price": 120,
+          "currency": "RON"
+        },
+        {
+          "name": "Chiuretaj parodontal in camp inchis (ambele arcade)",
+          "price": 2000,
+          "currency": "RON"
+        },
+        {
+          "name": "Fisa parodontala",
+          "price": 100,
+          "currency": "RON"
+        },
+        {
+          "name": "Profilaxie dispensarizare",
+          "price": 350,
+          "currency": "RON"
+        },
+        {
+          "name": "Profilaxie parodontala (US, air flow, lavaje/antibiotic)",
+          "price": 500,
+          "currency": "RON"
+        },
+        {
+          "name": "Consultatie + fisa parodontala",
+          "price": 350,
+          "currency": "RON"
+        },
+        {
+          "name": "Control",
+          "price": 100,
+          "currency": "RON"
+        }
+      ]
+    },
+    {
+      "name": "Pedodonție",
+      "services": [
+        {
+          "name": "Coafaj direct",
+          "price": 50,
+          "currency": "RON"
+        },
+        {
+          "name": "Obturatie compozit capa de celuloid",
+          "price": 190,
+          "currency": "RON"
+        },
+        {
+          "name": "Tratament endodontic dinte temporar + obturatie",
+          "price": 250,
+          "currency": "RON"
+        },
+        {
+          "name": "Sigilare dinte temporar",
+          "price": 130,
+          "currency": "RON"
+        },
+        {
+          "name": "Sigilare dinte permanent",
+          "price": 150,
+          "currency": "RON"
+        },
+        {
+          "name": "Completare obturatie",
+          "price": 40,
+          "currency": "RON"
+        },
+        {
+          "name": "Obturatie coronara extinsa compozit dinte definitiv",
+          "price": 200,
+          "currency": "RON"
+        },
+        {
+          "name": "Obturatie coronara compozit dinte temporar",
+          "price": 160,
+          "currency": "RON"
+        },
+        {
+          "name": "Obturatie coronara CIS dinte temporar",
+          "price": 130,
+          "currency": "RON"
+        },
+        {
+          "name": "Pansament calmant",
+          "price": 100,
+          "currency": "RON"
+        },
+        {
+          "name": "Drenaj abces",
+          "price": 80,
+          "currency": "RON"
+        },
+        {
+          "name": "Pachet profilaxie completa",
+          "price": 270,
+          "currency": "RON"
+        },
+        {
+          "name": "Air Flow ambele arcade",
+          "price": 100,
+          "currency": "RON"
+        },
+        {
+          "name": "Periaj ambele arcade",
+          "price": 100,
+          "currency": "RON"
+        },
+        {
+          "name": "Consultatie",
+          "price": 70,
+          "currency": "RON"
+        },
+        {
+          "name": "Extractie in scop ortodontic",
+          "price": 200,
+          "currency": "RON"
+        },
+        {
+          "name": "Extractie dinte temporar cu anestezie",
+          "price": 150,
+          "currency": "RON"
+        },
+        {
+          "name": "Extractie dinte temporar pluriradicular imobil",
+          "price": 150,
+          "currency": "RON"
+        },
+        {
+          "name": "Extractie dinte temporar monoradicular imobil",
+          "price": 120,
+          "currency": "RON"
+        },
+        {
+          "name": "Extractie dinte temporar pluriradicular mobil",
+          "price": 100,
+          "currency": "RON"
+        },
+        {
+          "name": "Extractie dinte temporar monoradicular mobil",
+          "price": 80,
+          "currency": "RON"
+        },
+        {
+          "name": "Extractie rest radicular (dinte temporar)",
+          "price": 80,
+          "currency": "RON"
+        },
+        {
+          "name": "Obturatie coronara extinsa compozit dinte temporar",
+          "price": 180,
+          "currency": "RON"
+        },
+        {
+          "name": "Sedinta acomodare",
+          "price": 80,
+          "currency": "RON"
+        },
+        {
+          "name": "Fluorizare ambele arcade",
+          "price": 100,
+          "currency": "RON"
+        }
+      ]
+    },
+    {
+      "name": "Estetică",
+      "services": [
+        {
+          "name": "Tratament albire profesională-lampă foto",
+          "price": 800,
+          "currency": "RON"
+        },
+        {
+          "name": "Ștras (aplicare bijuterie)",
+          "price": 350,
+          "currency": "RON"
+        },
+        {
+          "name": "Fațetă",
+          "price": 1700,
+          "currency": "RON"
+        },
+        {
+          "name": "Fațetare directă",
+          "price": 300,
+          "currency": "RON"
+        },
+        {
+          "name": "Tratament albire dinte devital",
+          "price": 100,
+          "currency": "RON"
+        },
+        {
+          "name": "Albire laser",
+          "price": 1300,
+          "currency": "RON"
+        }
+      ]
+    },
+    {
+      "name": "Ortodonție",
+      "services": [
+        {
+          "name": "Ortoimplant",
+          "price": 800,
+          "currency": "RON"
+        },
+        {
+          "name": "Îndepărtare aparat fix/ arcada",
+          "price": 500,
+          "currency": "RON"
+        },
+        {
+          "name": "Menținător de spațiu",
+          "price": 900,
+          "currency": "RON"
+        },
+        {
+          "name": "Recolat bracket ceramic / safir",
+          "price": 150,
+          "currency": "RON"
+        },
+        {
+          "name": "Recolat bracket metalic / tubușor cu înlocuire",
+          "price": 100,
+          "currency": "RON"
+        },
+        {
+          "name": "Schimb arc",
+          "price": 100,
+          "currency": "RON"
+        },
+        {
+          "name": "Control aparat fix / arcadă",
+          "price": 125,
+          "currency": "RON"
+        },
+        {
+          "name": "Aparat mobil",
+          "price": 1500,
+          "currency": "RON"
+        },
+        {
+          "name": "Disjunctor",
+          "price": 2000,
+          "currency": "RON"
+        },
+        {
+          "name": "Arc transpalatinal",
+          "price": 1300,
+          "currency": "RON"
+        },
+        {
+          "name": "Aparat fix safir / arcadă",
+          "price": 4000,
+          "currency": "RON"
+        },
+        {
+          "name": "Aparat fix ceramic / arcadă",
+          "price": 4000,
+          "currency": "RON"
+        },
+        {
+          "name": "Aparat fix metalic / arcadă",
+          "price": 2700,
+          "currency": "RON"
+        },
+        {
+          "name": "Plan de tratament",
+          "price": 100,
+          "currency": "RON"
+        },
+        {
+          "name": "Amprentă model de studiu",
+          "price": 100,
+          "currency": "RON"
+        },
+        {
+          "name": "Modele de studiu + fotografii",
+          "price": 300,
+          "currency": "RON"
+        },
+        {
+          "name": "Consultație medic specialist",
+          "price": 200,
+          "currency": "RON"
+        },
+        {
+          "name": "Platon retroincizal",
+          "price": 1300,
+          "currency": "RON"
+        },
+        {
+          "name": "Indepartare aparat fix+ retainer",
+          "price": 700,
+          "currency": "RON"
+        },
+        {
+          "name": "Indepartare aparat fix+ gutiera",
+          "price": 750,
+          "currency": "RON"
+        },
+        {
+          "name": "Spark Aligners (peste 20 de gutiere- advanced case)",
+          "price": 20000,
+          "currency": "RON"
+        },
+        {
+          "name": "Spark Aligners (pana in 20 gutiere- medium case)",
+          "price": 15000,
+          "currency": "RON"
+        },
+        {
+          "name": "Trainer ortodontic",
+          "price": 1500,
+          "currency": "RON"
+        },
+        {
+          "name": "Gutiera contentie",
+          "price": 500,
+          "currency": "RON"
+        },
+        {
+          "name": "Retainer fix/mobil",
+          "price": 600,
+          "currency": "RON"
+        },
+        {
+          "name": "Masca Delaire",
+          "price": 1300,
+          "currency": "RON"
+        },
+        {
+          "name": "Control aparat mobil",
+          "price": 100,
+          "currency": "RON"
+        },
+        {
+          "name": "Arc lingual",
+          "price": 1300,
+          "currency": "RON"
+        }
+      ]
+    }
+  ]
+}

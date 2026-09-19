@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>Comp Presenter</title>
+    <link rel="stylesheet" href="../../reset.css" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <button class="left-button" type="button" aria-label="Previous">
+        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <use href="#icon-left" fill="currentColor"></use>
+        </svg>
+      </button>
+      <button class="right-button" type="button" aria-label="Next">
+        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <use href="#icon-right" fill="currentColor"></use>
+        </svg>
+      </button>
+    </header>
+    <section class="ct-demo">
+      <div class="ct-card-all">
+        <div class="ct-card-all-header">
+          <div class="ct-card-all-header-controls">
+            <div class="ct-card-all-search">
+              <form class="ct-search" role="search">
+                <label class="ct-field-label" for="ct-search-input">Search</label>
+                <div class="ct-search-row">
+                  <input
+                    id="ct-search-input"
+                    class="ct-search-input"
+                    type="search"
+                    name="q"
+                    placeholder="Search services"
+                    autocomplete="off"
+                    spellcheck="false"
+                    role="combobox"
+                    aria-autocomplete="list"
+                    aria-controls="ct-search-list"
+                    aria-expanded="false"
+                    aria-haspopup="listbox"
+                  />
+                  <button class="ct-search-submit" type="submit" aria-label="Search">
+                    <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <use href="#icon-search" fill="currentColor"></use>
+                    </svg>
+                  </button>
+                </div>
+              </form>
+              <ul id="ct-search-list" class="ct-search-panel" role="listbox" hidden></ul>
+            </div>
+            <div class="ct-card-all-combo">
+              <label class="ct-field-label" for="ct-combo-category">Category</label>
+              <select class="ct-combo" id="ct-combo-category" name="category">
+                <option value="recommended" selected>Recommended Services</option>
+              </select>
+            </div>
+            <div class="ct-card-all-combo">
+              <label class="ct-field-label" for="ct-combo-subcategory">Subcategory</label>
+              <select class="ct-combo" id="ct-combo-subcategory" name="subcategory">
+                <option value="" selected></option>
+              </select>
+            </div>
+          </div>
+          <div class="ct-card-all-header-position">
+            <p id="ct-nav-position" class="ct-nav-position" role="status" aria-live="polite" aria-atomic="true">1 of 17</p>
+          </div>
+        </div>
+        <div class="ct-card-all-main">
+          <div class="ct-slider" tabindex="-1" aria-roledescription="carousel" aria-label="Services">
+            <div class="ct-slider-container">
+              <ul class="ct-slider-items">
+                <li class="ct-slider-item">
+                  <div class="ct-card">
+                    <div class="ct-card-inner">
+                      <div class="ct-card-front-face">
+                        <svg class="ct-card-bg" width="160" height="160" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                          <use href="#icon-generic" fill="currentColor"></use>
+                        </svg>
+                        <h2 class="ct-card-title">Standard Plan</h2>
+                        <div class="ct-card-foot">
+                          <p class="ct-card-price">$49</p>
+                          <button class="ct-card-select" type="button">Select</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="sep"></div>
+    <div class="sep-min"></div>
+    <div class="sep"></div>
+    <div class="ctmy">
+      AAAAAAAAAAAAA
+    </div>
+    <svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true" focusable="false">
+      <symbol id="icon-left" viewBox="0 0 24 24" fill="none">
+        <path d="M14.5 6.5 9 12l5.5 5.5 1.4-1.4L11.8 12 15.9 7.9 14.5 6.5Z" fill="currentColor" />
+      </symbol>
+      <symbol id="icon-right" viewBox="0 0 24 24" fill="none">
+        <path d="M9.5 6.5 15 12l-5.5 5.5-1.4-1.4L12.2 12 8.1 7.9 9.5 6.5Z" fill="currentColor" />
+      </symbol>
+      <symbol id="icon-generic" viewBox="0 0 24 24" fill="none">
+        <path d="M12 2.2 20.3 7v10L12 21.8 3.7 17V7L12 2.2Zm0 2.4L5.7 8.1v7.8L12 19.4l6.3-3.5V8.1L12 4.6Z" fill="currentColor" />
+        <path d="M12 8.2 15.8 10.4v4.2L12 16.8 8.2 14.6v-4.2L12 8.2Z" fill="currentColor" />
+      </symbol>
+      <symbol id="icon-search" viewBox="0 0 24 24" fill="none">
+        <path d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79L20 19.49 19.49 20 15.5 14Zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14Z" fill="currentColor" />
+      </symbol>
+    </svg>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

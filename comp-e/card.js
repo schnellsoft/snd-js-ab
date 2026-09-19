@@ -1,6 +1,20 @@
-const SETTLE_MS = 420;
+const SETTLE_MS = 560;
 const COMMIT_DEG = 90;
 const FLIP_DEG = 180;
+
+/**
+ * @param {number} t
+ */
+function easeFlip(t) {
+  return t < 0.5 ? 4 * t * t * t : 1 - (2 - 2 * t) ** 3 / 2;
+}
+
+/**
+ * @param {number} t
+ */
+function easeSettle(t) {
+  return 1 - (1 - t) ** 3;
+}
 const EMPTY_ITEM = { title: "", price: "", icon: "icon-generic" };
 
 export class Card {
@@ -32,7 +46,7 @@ export class Card {
     this.controls = options.controls !== false;
     /** @type {{ from: number, to: number, start: number, duration: number, nextIndex: number | null } | null} */
     this.settle = null;
-    /** @type {{ id: number, x: number, y: number, axis: "x" | "y" | "", angle: number } | null} */
+    /** @type {{ id: number, x: number, y: number, axis: "x" | "y" | "", angle: number, armed?: boolean } | null} */
     this.swipe = null;
     /** @type {AbortController | null} */
     this.controller = null;
@@ -87,6 +101,7 @@ export class Card {
     this.inner?.classList.remove("ct-card-inner-live");
     if (this.inner) {
       this.inner.style.transform = "";
+      this.inner.style.removeProperty("--ct-shade");
     }
   }
 
@@ -126,7 +141,9 @@ export class Card {
 
     const nextIndex = this.#offset(step);
     this.#paintFace(this.back, this.items[nextIndex]);
+    this.#refreshFace(this.back);
     this.dragStep = step;
+    this.busy = true;
 
     if (this.#prefersReducedMotion()) {
       this.index = nextIndex;
@@ -135,8 +152,19 @@ export class Card {
     }
 
     this.angle = 0;
-    this.#applyAngle(0);
-    this.#startSettle(step > 0 ? -FLIP_DEG : FLIP_DEG, nextIndex);
+    requestAnimationFrame(() => {
+      if (!this.busy || this.settle) {
+        return;
+      }
+      this.#refreshFace(this.back);
+      requestAnimationFrame(() => {
+        if (!this.busy || this.settle) {
+          return;
+        }
+        this.#applyAngle(0);
+        this.#startSettle(step > 0 ? -FLIP_DEG : FLIP_DEG, nextIndex);
+      });
+    });
   }
 
   /**
@@ -176,7 +204,7 @@ export class Card {
     }
 
     const touch = event.touches[0];
-    this.swipe = { id: touch.identifier, x: touch.clientX, y: touch.clientY, axis: "", angle: 0 };
+    this.swipe = { id: touch.identifier, x: touch.clientX, y: touch.clientY, axis: "", angle: 0, armed: false };
   }
 
   /**
@@ -202,7 +230,17 @@ export class Card {
       this.swipe.axis = Math.abs(dx) >= Math.abs(dy) ? "x" : "y";
       if (this.swipe.axis === "x") {
         this.dragging = true;
-        this.inner.classList.add("ct-card-inner-live");
+        this.dragStep = 0;
+        this.#syncBackForAngle(dx < 0 ? -1 : 1);
+        this.swipe.armed = false;
+        requestAnimationFrame(() => {
+          if (!this.swipe) {
+            return;
+          }
+          this.inner.classList.add("ct-card-inner-live");
+          this.swipe.armed = true;
+          this.#schedule();
+        });
       }
     }
 
@@ -213,7 +251,9 @@ export class Card {
     event.preventDefault();
     this.swipe.angle = this.#angleFromDx(dx);
     this.#syncBackForAngle(this.swipe.angle);
-    this.#schedule();
+    if (this.swipe.armed) {
+      this.#schedule();
+    }
   }
 
   /**
@@ -291,7 +331,7 @@ export class Card {
       from: this.angle,
       to,
       start: performance.now(),
-      duration: Math.max(220, SETTLE_MS * (distance / FLIP_DEG)),
+      duration: Math.max(280, SETTLE_MS * (distance / FLIP_DEG)),
       nextIndex,
     };
     this.#schedule();
@@ -312,7 +352,7 @@ export class Card {
 
     if (this.settle) {
       const t = Math.min(1, (now - this.settle.start) / this.settle.duration);
-      const eased = 1 - (1 - t) ** 3;
+      const eased = this.settle.nextIndex != null ? easeFlip(t) : easeSettle(t);
       this.#applyAngle(this.settle.from + (this.settle.to - this.settle.from) * eased);
 
       if (t < 1) {
@@ -346,6 +386,7 @@ export class Card {
     this.inner?.classList.remove("ct-card-inner-live");
     if (this.inner) {
       this.inner.style.transform = "";
+      this.inner.style.removeProperty("--ct-shade");
     }
     this.index = this.items.length ? Math.min(Math.max(0, index), this.items.length - 1) : 0;
     this.#render();
@@ -364,6 +405,20 @@ export class Card {
    */
   paintBack(item) {
     this.#paintFace(this.back, item ?? EMPTY_ITEM);
+    this.#refreshFace(this.back);
+  }
+
+  /**
+   * Force the back face layer to update before a 3D turn.
+   * @param {HTMLElement | null} face
+   */
+  #refreshFace(face) {
+    if (!face) {
+      return;
+    }
+    const nudged = face.style.translate === "0 0 0.02px";
+    face.style.translate = nudged ? "0 0 0px" : "0 0 0.02px";
+    void face.offsetHeight;
   }
 
   /**
@@ -387,6 +442,7 @@ export class Card {
     this.setLive(false);
     if (this.inner) {
       this.inner.style.transform = "";
+      this.inner.style.removeProperty("--ct-shade");
     }
   }
 
@@ -404,6 +460,7 @@ export class Card {
     this.angle = 0;
     this.inner.classList.remove("ct-card-inner-live");
     this.inner.style.transform = "";
+    this.inner.style.removeProperty("--ct-shade");
     this.#render();
     this.onIndexChange?.(this.index);
   }
@@ -421,7 +478,17 @@ export class Card {
    */
   #applyAngle(deg) {
     this.angle = deg;
-    this.inner.style.transform = `rotateY(${deg}deg)`;
+    if (!this.inner) {
+      return;
+    }
+    const rad = (deg * Math.PI) / 180;
+    const edge = Math.abs(Math.sin(rad));
+    const tiltX = Math.sin(rad) * -7;
+    const twist = Math.sin(rad) * 2.4;
+    const depth = edge * -48;
+    const lift = edge * -8;
+    this.inner.style.transform = `translate3d(0, ${lift}px, ${depth}px) rotateX(${tiltX}deg) rotateY(${deg}deg) rotateZ(${twist}deg)`;
+    this.inner.style.setProperty("--ct-shade", (edge * 0.42).toFixed(3));
   }
 
   /**
@@ -429,7 +496,7 @@ export class Card {
    */
   #angleFromDx(dx) {
     const width = this.root.getBoundingClientRect().width || 1;
-    return Math.max(-FLIP_DEG, Math.min(FLIP_DEG, (dx / width) * FLIP_DEG));
+    return Math.max(-FLIP_DEG, Math.min(FLIP_DEG, (dx / width) * 155));
   }
 
   /**
@@ -443,6 +510,7 @@ export class Card {
 
     this.dragStep = step;
     this.#paintFace(this.back, this.items[this.#offset(step)]);
+    this.#refreshFace(this.back);
   }
 
   #clearSwipe() {
@@ -565,10 +633,11 @@ export class Deck {
     this.rafId = 0;
     /** @type {{ from: number, to: number, start: number, duration: number, commit: boolean } | null} */
     this.settle = null;
-    /** @type {{ id: number, x: number, y: number, axis: "x" | "y" | "", angle: number } | null} */
+    /** @type {{ id: number, x: number, y: number, axis: "x" | "y" | "", angle: number, armed?: boolean } | null} */
     this.swipe = null;
     /** @type {(() => void) | null} */
     this.onFlipDone = null;
+    this.paintToken = 0;
     /** @type {Array<{ title: string, price: string, icon?: string }>} */
     this.nextItems = [];
     /** @type {Array<{ title: string, price: string, icon?: string }>} */
@@ -602,6 +671,7 @@ export class Deck {
   }
 
   disconnect() {
+    this.paintToken += 1;
     this.controller?.abort();
     this.controller = null;
     this.#stopLoop();
@@ -654,6 +724,7 @@ export class Deck {
     this.busy = true;
     this.onFlipDone = done ?? null;
     this.dragStep = step;
+    const token = ++this.paintToken;
     visible.forEach((card, index) => {
       card.paintBack(backs[index] ?? EMPTY_ITEM);
     });
@@ -664,11 +735,35 @@ export class Deck {
     }
 
     this.angle = 0;
-    this.#forVisible((card) => {
-      card.setLive(true);
-      card.applyAngle(0);
+    this.#afterBackPaint(token, () => {
+      this.#forVisible((card) => {
+        card.setLive(true);
+        card.applyAngle(0);
+      });
+      this.#startSettle(step > 0 ? -FLIP_DEG : FLIP_DEG, true);
     });
-    this.#startSettle(step > 0 ? -FLIP_DEG : FLIP_DEG, true);
+  }
+
+  /**
+   * Wait until the updated back faces have been painted, then start the turn.
+   * @param {number} token
+   * @param {() => void} start
+   */
+  #afterBackPaint(token, start) {
+    requestAnimationFrame(() => {
+      if (token !== this.paintToken) {
+        return;
+      }
+      this.#visible().forEach((card) => {
+        void card.back?.offsetHeight;
+      });
+      requestAnimationFrame(() => {
+        if (token !== this.paintToken || !this.busy) {
+          return;
+        }
+        start();
+      });
+    });
   }
 
   /**
@@ -748,7 +843,7 @@ export class Deck {
     }
 
     const touch = event.touches[0];
-    this.swipe = { id: touch.identifier, x: touch.clientX, y: touch.clientY, axis: "", angle: 0 };
+    this.swipe = { id: touch.identifier, x: touch.clientX, y: touch.clientY, axis: "", angle: 0, armed: false };
   }
 
   /**
@@ -774,7 +869,18 @@ export class Deck {
       this.swipe.axis = Math.abs(dx) >= Math.abs(dy) ? "x" : "y";
       if (this.swipe.axis === "x") {
         this.dragging = true;
-        this.#forVisible((card) => card.setLive(true));
+        this.dragStep = 0;
+        this.#syncBacks(dx < 0 ? -1 : 1);
+        const token = this.paintToken;
+        this.swipe.armed = false;
+        requestAnimationFrame(() => {
+          if (!this.swipe || token !== this.paintToken) {
+            return;
+          }
+          this.#forVisible((card) => card.setLive(true));
+          this.swipe.armed = true;
+          this.#schedule();
+        });
       }
     }
 
@@ -785,7 +891,9 @@ export class Deck {
     event.preventDefault();
     this.swipe.angle = this.#angleFromDx(dx);
     this.#syncBacks(this.swipe.angle);
-    this.#schedule();
+    if (this.swipe.armed) {
+      this.#schedule();
+    }
   }
 
   /**
@@ -884,7 +992,7 @@ export class Deck {
       from: this.angle,
       to,
       start: performance.now(),
-      duration: Math.max(220, SETTLE_MS * (distance / FLIP_DEG)),
+      duration: Math.max(280, SETTLE_MS * (distance / FLIP_DEG)),
       commit,
     };
     this.#schedule();
@@ -905,7 +1013,7 @@ export class Deck {
 
     if (this.settle) {
       const t = Math.min(1, (now - this.settle.start) / this.settle.duration);
-      const eased = 1 - (1 - t) ** 3;
+      const eased = this.settle.commit ? easeFlip(t) : easeSettle(t);
       this.angle = this.settle.from + (this.settle.to - this.settle.from) * eased;
       this.#forVisible((card) => card.applyAngle(this.angle));
 
@@ -933,6 +1041,7 @@ export class Deck {
   }
 
   #finishFlip() {
+    this.paintToken += 1;
     this.#stopLoop();
     this.#forVisible((card) => card.resetPose());
     this.busy = false;
@@ -958,7 +1067,7 @@ export class Deck {
   #angleFromDx(dx) {
     const card = this.#visible()[0];
     const width = card?.root.getBoundingClientRect().width || 1;
-    return Math.max(-FLIP_DEG, Math.min(FLIP_DEG, (dx / width) * FLIP_DEG));
+    return Math.max(-FLIP_DEG, Math.min(FLIP_DEG, (dx / width) * 155));
   }
 
   #prefersReducedMotion() {

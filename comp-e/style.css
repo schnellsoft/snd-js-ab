@@ -68,7 +68,7 @@ svg.icon-sprite {
 }
 
 .ct-demo {
-  perspective: 70rem;
+  perspective: none;
 }
 
 .ct-demo .ct-card-all {
@@ -269,6 +269,7 @@ svg.icon-sprite {
   min-height: 0;
   padding-inline: 0.5rem;
   overflow: hidden;
+  container-type: size;
   --ct-card-min-px: 240;
 }
 
@@ -282,7 +283,8 @@ svg.icon-sprite {
   min-block-size: 0;
   height: min(17.5rem, 100%);
   max-height: 100%;
-  container-type: size;
+  perspective: 52rem;
+  perspective-origin: 50% 46%;
   transform-style: preserve-3d;
   touch-action: pan-y;
 }
@@ -486,7 +488,9 @@ svg.icon-sprite {
   position: relative;
   min-block-size: 0;
   height: 100%;
+  transform-origin: 50% 50%;
   transform-style: preserve-3d;
+  --ct-shade: 0;
 }
 
 .ct-card-inner-live {
@@ -507,7 +511,8 @@ svg.icon-sprite {
   border-radius: 1.25rem;
   color: #3eb489;
   color-scheme: dark;
-  background:
+  background-color: #171717;
+  background-image:
     linear-gradient(180deg, rgb(62 180 137 / 0.1), transparent 42%),
     linear-gradient(155deg, #2b2b2b 0%, #171717 100%);
   box-shadow:
@@ -518,12 +523,23 @@ svg.icon-sprite {
   -webkit-backface-visibility: hidden;
 }
 
+.ct-card-front-face::after,
+.ct-card-back-face::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  border-radius: inherit;
+  background: rgb(0 0 0 / var(--ct-shade, 0));
+}
+
 .ct-card-front-face {
-  transform: rotateY(0deg);
+  transform: rotateY(0deg) translateZ(1px);
 }
 
 .ct-card-back-face {
-  transform: rotateY(180deg);
+  transform: rotateY(180deg) translateZ(1px);
 }
 
 .ct-demo .ct-card-front-face,

@@ -1,3 +1,5 @@
+import { languageFolder, onLanguageChange } from "./lang.js";
+
 const MAX_LAYOUT_PASSES = 3;
 const SUBPIXEL_SLACK = 0.5;
 const MAX_MENU_LEVEL = 3;
@@ -12,6 +14,7 @@ export class SndListComp {
     this.root = root;
     this.more = root.querySelector(".snd-list-more");
     this.list = root.querySelector(".snd-list");
+    this.listCt = root.querySelector(".snd-list-ct");
     this.overflow = root.querySelector(".snd-list-overflow");
     this.hamburger = root.querySelector(".snd-list-hamburger");
     this.drawer = root.querySelector(".snd-menu-drawer");
@@ -117,6 +120,13 @@ export class SndListComp {
 
     this.#mapChromeIcon(this.more, "morev");
     this.#mapChromeIcon(this.hamburger, "hamburger");
+    onLanguageChange(() => {
+      this.itemWidths = new WeakMap();
+      this.#loadMenu().then(() => {
+        this.#applyCompactMode();
+        this.layout(0);
+      });
+    });
     this.#loadMenu().then(() => {
       this.#applyCompactMode();
       this.layout(0);
@@ -235,22 +245,26 @@ export class SndListComp {
     return Number.isFinite(gap) ? gap : 0;
   }
 
-  /** Fetch header-menu.json and sprite.svg, then render the 3-level menu. */
+  /** Fetch header-menu.json, the active language copy, and sprite.svg, then render the 3-level menu. */
   async #loadMenu() {
     const dataUrl = new URL("data/header-menu.json", import.meta.url);
+    const copyUrl = new URL(`data/${languageFolder()}/header-menu.json`, import.meta.url);
     const spriteUrl = new URL("sprite.svg", import.meta.url);
     let data;
+    let copy;
     let spriteXml;
 
     try {
-      const [dataRes, spriteRes] = await Promise.all([
+      const [dataRes, copyRes, spriteRes] = await Promise.all([
         fetch(dataUrl),
+        fetch(copyUrl),
         fetch(spriteUrl),
       ]);
-      if (!dataRes.ok || !spriteRes.ok) {
+      if (!dataRes.ok || !copyRes.ok || !spriteRes.ok) {
         return;
       }
       data = await dataRes.json();
+      copy = await copyRes.json();
       spriteXml = await spriteRes.text();
     } catch {
       return;
@@ -262,6 +276,8 @@ export class SndListComp {
     );
     this.moreEnabled = data.moreList !== false;
     this.iconSize = Number.parseFloat(data.baseline) || 24;
+    this.#applyListMaxWidth(data["max-width"]);
+    this.#applyLanguage(data.menu, copy?.menu);
 
     const topLevel = this.#visibleArticles(data.menu);
     this.list.replaceChildren(
@@ -270,6 +286,64 @@ export class SndListComp {
     this.drawer.replaceChildren(
       ...topLevel.map((article) => this.#createItem(article, 1, true)),
     );
+  }
+
+  /**
+   * Cap .snd-list-ct when JSON max-width is a non-empty value.
+   * @param {unknown} maxWidth
+   */
+  #applyListMaxWidth(maxWidth) {
+    if (!(this.listCt instanceof HTMLElement)) {
+      return;
+    }
+    const value = typeof maxWidth === "string" ? maxWidth.trim() : "";
+    if (!value) {
+      this.listCt.style.removeProperty("--snd-list-ct-max-width");
+      return;
+    }
+    this.listCt.style.setProperty("--snd-list-ct-max-width", value);
+  }
+
+  /**
+   * Sprite id from the structural menu. Language files may replace name with a translated word.
+   * @param {object} article
+   * @returns {string}
+   */
+  #spriteId(article) {
+    const icon = typeof article.icon === "string" ? article.icon.trim() : "";
+    if (icon) {
+      return icon;
+    }
+    return typeof article.name === "string" ? article.name.trim() : "";
+  }
+
+  /**
+   * Overlay translated name, label, description, and aria-label onto the structural menu.
+   * @param {unknown} nodes
+   * @param {unknown} copies
+   */
+  #applyLanguage(nodes, copies) {
+    if (!Array.isArray(nodes) || !Array.isArray(copies)) {
+      return;
+    }
+    for (let i = 0; i < nodes.length; i += 1) {
+      const node = nodes[i];
+      const copy = copies[i];
+      if (!node || typeof node !== "object" || !copy || typeof copy !== "object") {
+        continue;
+      }
+      if (typeof node.name === "string") {
+        node.icon = node.name;
+      }
+      for (const key of ["name", "label", "description", "aria-label"]) {
+        if (typeof copy[key] === "string") {
+          node[key] = copy[key];
+        }
+      }
+      if (Array.isArray(node.items)) {
+        this.#applyLanguage(node.items, copy.items);
+      }
+    }
   }
 
   /**
@@ -285,7 +359,7 @@ export class SndListComp {
       if (!article || typeof article !== "object") {
         return false;
       }
-      const name = typeof article.name === "string" ? article.name.trim() : "";
+      const name = this.#spriteId(article);
       const label = typeof article.label === "string" ? article.label.trim() : "";
       return Boolean(label) || this.symbolIds.has(name);
     });
@@ -315,7 +389,7 @@ export class SndListComp {
     const children =
       level < MAX_MENU_LEVEL ? this.#visibleArticles(article.items) : [];
     const hasChildren = children.length > 0;
-    const name = typeof article.name === "string" ? article.name.trim() : "";
+    const name = this.#spriteId(article);
     const hasIcon = Boolean(name) && this.symbolIds.has(name);
     const control = document.createElement(hasChildren ? "button" : "a");
     control.className = "snd-list-link";

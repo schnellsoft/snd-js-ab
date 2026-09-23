@@ -1,0 +1,180 @@
+{
+  "menu": [
+    {
+      "name": "Facebook",
+      "label": "Facebook",
+      "description": "Secțiune Facebook",
+      "aria-label": "Facebook",
+      "items": [
+        {
+          "name": "Telefon",
+          "label": "Asistență",
+          "description": "Sună la asistență",
+          "aria-label": "Asistență",
+          "items": [
+            {
+              "name": "WhatsApp",
+              "label": "WhatsApp",
+              "description": "Chat pe WhatsApp",
+              "aria-label": "WhatsApp"
+            },
+            {
+              "name": "Locație",
+              "label": "Birou",
+              "description": "Locația biroului",
+              "aria-label": "Birou"
+            }
+          ]
+        },
+        {
+          "name": "LinkedIn",
+          "label": "Cariere",
+          "description": "Posturi deschise",
+          "aria-label": "Cariere"
+        }
+      ]
+    },
+    {
+      "name": "Instagram",
+      "label": "Instagram",
+      "description": "Secțiune Instagram",
+      "aria-label": "Instagram",
+      "items": [
+        {
+          "name": "Twitter",
+          "label": "Povești",
+          "description": "Ultimele povești",
+          "aria-label": "Povești",
+          "items": [
+            {
+              "name": "Facebook",
+              "label": "Reels",
+              "description": "Videoclipuri scurte",
+              "aria-label": "Reels"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Twitter",
+      "label": "Twitter",
+      "description": "Profil Twitter",
+      "aria-label": "Twitter"
+    },
+    {
+      "name": "LinkedIn",
+      "label": "LinkedIn",
+      "description": "Profil LinkedIn",
+      "aria-label": "LinkedIn"
+    },
+    {
+      "name": "WhatsApp",
+      "label": "WhatsApp",
+      "description": "Contact WhatsApp",
+      "aria-label": "WhatsApp",
+      "items": [
+        {
+          "name": "Telefon",
+          "label": "Sună-ne",
+          "description": "Contact telefonic",
+          "aria-label": "Sună-ne"
+        }
+      ]
+    },
+    {
+      "name": "Locație",
+      "label": "Locații",
+      "description": "Găsește o clinică",
+      "aria-label": "Locații"
+    },
+    {
+      "name": "Telefon",
+      "label": "Servicii",
+      "description": "Servicii clinice",
+      "aria-label": "Servicii",
+      "items": [
+        {
+          "name": "Locație",
+          "label": "Program",
+          "description": "Program de lucru",
+          "aria-label": "Program"
+        },
+        {
+          "name": "LinkedIn",
+          "label": "Echipă",
+          "description": "Cunoaște echipa",
+          "aria-label": "Echipă",
+          "items": [
+            {
+              "name": "Anna",
+              "label": "Anna",
+              "description": "Membru al echipei Anna",
+              "aria-label": "Anna"
+            },
+            {
+              "name": "Ben",
+              "label": "Ben",
+              "description": "Membru al echipei Ben",
+              "aria-label": "Ben"
+            },
+            {
+              "name": "Cara",
+              "label": "Cara",
+              "description": "Membru al echipei Cara",
+              "aria-label": "Cara"
+            },
+            {
+              "name": "Diego",
+              "label": "Diego",
+              "description": "Membru al echipei Diego",
+              "aria-label": "Diego"
+            },
+            {
+              "name": "Elena",
+              "label": "Elena",
+              "description": "Membru al echipei Elena",
+              "aria-label": "Elena"
+            },
+            {
+              "name": "Farid",
+              "label": "Farid",
+              "description": "Membru al echipei Farid",
+              "aria-label": "Farid"
+            },
+            {
+              "name": "Gita",
+              "label": "Gita",
+              "description": "Membru al echipei Gita",
+              "aria-label": "Gita"
+            },
+            {
+              "name": "Hugo",
+              "label": "Hugo",
+              "description": "Membru al echipei Hugo",
+              "aria-label": "Hugo"
+            },
+            {
+              "name": "Ivy",
+              "label": "Ivy",
+              "description": "Membru al echipei Ivy",
+              "aria-label": "Ivy"
+            },
+            {
+              "name": "Jules",
+              "label": "Jules",
+              "description": "Membru al echipei Jules",
+              "aria-label": "Jules"
+            }
+          ]
+        },
+        {
+          "name": "WhatsApp",
+          "label": "Programare",
+          "description": "Programează o consultație",
+          "aria-label": "Programare"
+        }
+      ]
+    }
+  ]
+}

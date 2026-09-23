@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,6 +17,23 @@
                 <div class="snd-ct-logo-max">
                     <img src="../assets/logo.png" alt="Ark Medical Clinic" width="390" height="125">
                 </div>
+            </div>
+            <div class="snd-ct-consultation">
+
+                <button type="button" class="btn-appointment" aria-label="Programează o consultație">
+                    <span class="status-indicator">
+                      <span class="status-dot"></span>
+                      <span class="status-pulse"></span>
+                    </span>
+                    <span class="btn-text">Programează o consultație</span>
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                      <line x1="16" y1="2" x2="16" y2="6"></line>
+                      <line x1="8" y1="2" x2="8" y2="6"></line>
+                      <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                  </button>
+
             </div>
             <div class="snd-ct-menu">
                 <div class="snd-list-comp">
@@ -115,9 +132,10 @@
                 </a>
             </div>
         </section>
-        <section class="header-bottom"></section>
+        <section class="header-bottom" hidden></section>
     </header>
     <script type="module" src="main.js"></script>
     <script type="module" src="icons.js"></script>
+    <script type="module" src="appointment.js"></script>
 </body>
 </html>

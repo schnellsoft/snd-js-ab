@@ -1,6 +1,7 @@
 {
   "moreList": true,
   "baseline": "24px",
+  "max-width": "400px",
   "menu": [
     {
       "name": "facebook",

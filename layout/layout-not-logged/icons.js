@@ -1,3 +1,5 @@
+import { languageFolder, onLanguageChange } from "./lang.js";
+
 const MAX_LAYOUT_PASSES = 3;
 const SUBPIXEL_SLACK = 0.5;
 const COMPACT_LABEL_MQ = "(orientation: portrait) and (max-width: 48em)";
@@ -11,6 +13,7 @@ export class SndIconsComp {
     this.root = root;
     this.more = root.querySelector(".snd-list-more");
     this.list = root.querySelector(".snd-list");
+    this.listCt = root.querySelector(".snd-list-ct");
     this.overflow = root.querySelector(".snd-list-overflow");
     /** @type {WeakMap<Element, number>} */
     this.itemWidths = new WeakMap();
@@ -65,6 +68,12 @@ export class SndIconsComp {
     }
 
     this.#mapMoreIcon();
+    onLanguageChange(() => {
+      this.itemWidths = new WeakMap();
+      this.#loadIcons().then(() => {
+        this.layout(0);
+      });
+    });
     this.#loadIcons().then(() => {
       this.layout(0);
     });
@@ -166,22 +175,26 @@ export class SndIconsComp {
     return Number.isFinite(gap) ? gap : 0;
   }
 
-  /** Fetch header-icons.json and sprite.svg, then render matching icons. */
+  /** Fetch header-icons.json, the active language copy, and sprite.svg, then render matching icons. */
   async #loadIcons() {
     const dataUrl = new URL("data/header-icons.json", import.meta.url);
+    const copyUrl = new URL(`data/${languageFolder()}/header-icons.json`, import.meta.url);
     const spriteUrl = new URL("sprite.svg", import.meta.url);
     let data;
+    let copy;
     let spriteXml;
 
     try {
-      const [dataRes, spriteRes] = await Promise.all([
+      const [dataRes, copyRes, spriteRes] = await Promise.all([
         fetch(dataUrl),
+        fetch(copyUrl),
         fetch(spriteUrl),
       ]);
-      if (!dataRes.ok || !spriteRes.ok) {
+      if (!dataRes.ok || !copyRes.ok || !spriteRes.ok) {
         return;
       }
       data = await dataRes.json();
+      copy = await copyRes.json();
       spriteXml = await spriteRes.text();
     } catch {
       return;
@@ -193,15 +206,73 @@ export class SndIconsComp {
     );
     this.moreEnabled = data.moreList !== false;
     const size = Number.parseFloat(data.baseline) || 24;
+    this.#applyListMaxWidth(data["max-width"]);
+    this.#applyLanguage(data.icons, copy?.icons);
 
     const items = [];
     for (const icon of data.icons ?? []) {
-      if (!icon?.name || !symbolIds.has(icon.name)) {
+      const sprite = this.#spriteId(icon);
+      if (!sprite || !symbolIds.has(sprite)) {
         continue;
       }
       items.push(this.#createItem(icon, size));
     }
     this.list.replaceChildren(...items);
+  }
+
+  /**
+   * Cap .snd-list-ct when JSON max-width is a non-empty value.
+   * @param {unknown} maxWidth
+   */
+  #applyListMaxWidth(maxWidth) {
+    if (!(this.listCt instanceof HTMLElement)) {
+      return;
+    }
+    const value = typeof maxWidth === "string" ? maxWidth.trim() : "";
+    if (!value) {
+      this.listCt.style.removeProperty("--snd-list-ct-max-width");
+      return;
+    }
+    this.listCt.style.setProperty("--snd-list-ct-max-width", value);
+  }
+
+  /**
+   * Sprite id from the structural icons file. Language files may replace name with a translated word.
+   * @param {object} icon
+   * @returns {string}
+   */
+  #spriteId(icon) {
+    const sprite = typeof icon.icon === "string" ? icon.icon.trim() : "";
+    if (sprite) {
+      return sprite;
+    }
+    return typeof icon.name === "string" ? icon.name.trim() : "";
+  }
+
+  /**
+   * Overlay translated name, label, description, and aria-label onto the structural icons.
+   * @param {unknown} nodes
+   * @param {unknown} copies
+   */
+  #applyLanguage(nodes, copies) {
+    if (!Array.isArray(nodes) || !Array.isArray(copies)) {
+      return;
+    }
+    for (let i = 0; i < nodes.length; i += 1) {
+      const node = nodes[i];
+      const copy = copies[i];
+      if (!node || typeof node !== "object" || !copy || typeof copy !== "object") {
+        continue;
+      }
+      if (typeof node.name === "string") {
+        node.icon = node.name;
+      }
+      for (const key of ["name", "label", "description", "aria-label"]) {
+        if (typeof copy[key] === "string") {
+          node[key] = copy[key];
+        }
+      }
+    }
   }
 
   /** Put the morev sprite icon into the More button. */
@@ -229,8 +300,9 @@ export class SndIconsComp {
     const item = document.createElement("div");
     item.className = "snd-list-item";
 
+    const sprite = this.#spriteId(icon);
     const link = document.createElement("a");
-    link.className = `snd-list-link brand-${icon.name}`;
+    link.className = `snd-list-link brand-${sprite}`;
     link.href = icon.link || "#";
     if (icon.description) {
       link.title = icon.description;
@@ -252,7 +324,7 @@ export class SndIconsComp {
     }
 
     const use = document.createElementNS("http://www.w3.org/2000/svg", "use");
-    use.setAttribute("href", `sprite.svg#${icon.name}`);
+    use.setAttribute("href", `sprite.svg#${sprite}`);
     svg.append(use);
 
     const label = document.createElement("span");

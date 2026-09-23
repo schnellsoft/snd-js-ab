@@ -1,0 +1,28 @@
+{
+  "icons": [
+    {
+      "name": "Facebook",
+      "label": "Facebook",
+      "description": "Pagina de Facebook",
+      "aria-label": "Facebook"
+    },
+    {
+      "name": "Instagram",
+      "label": "Instagram",
+      "description": "Pagina de Instagram",
+      "aria-label": "Instagram"
+    },
+    {
+      "name": "Twitter",
+      "label": "Twitter",
+      "description": "Pagina de Twitter",
+      "aria-label": "Twitter"
+    },
+    {
+      "name": "LinkedIn",
+      "label": "LinkedIn",
+      "description": "Pagina de LinkedIn",
+      "aria-label": "LinkedIn"
+    }
+  ]
+}

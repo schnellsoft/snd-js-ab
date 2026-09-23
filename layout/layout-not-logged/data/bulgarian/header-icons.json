@@ -1,0 +1,28 @@
+{
+  "icons": [
+    {
+      "name": "Фейсбук",
+      "label": "Фейсбук",
+      "description": "Страница във Фейсбук",
+      "aria-label": "Фейсбук"
+    },
+    {
+      "name": "Инстаграм",
+      "label": "Инстаграм",
+      "description": "Страница в Инстаграм",
+      "aria-label": "Инстаграм"
+    },
+    {
+      "name": "Туитър",
+      "label": "Туитър",
+      "description": "Страница в Туитър",
+      "aria-label": "Туитър"
+    },
+    {
+      "name": "LinkedIn",
+      "label": "LinkedIn",
+      "description": "Страница в LinkedIn",
+      "aria-label": "LinkedIn"
+    }
+  ]
+}

@@ -1,3 +1,10 @@
+:root {
+    --bg-dark-header: #121516; /* Clean deep slate charcoal */
+    --mint-primary: #5AD0B3;     /* Accessible Mint Accent */
+    --mint-glow: rgba(90, 208, 179, 0.25);
+    --mint-dark-text: #0b221b;   /* Ultra-dark green for contrast on hover */
+  }
+
 body {
     background-color: #0F172A;
     margin: 0;
@@ -11,7 +18,7 @@ body {
 
 header {
     width: 100%;
-    height: 120px;   
+    height: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -38,11 +45,17 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid rgb(51, 255, 0);
+    border: 0px solid rgb(51, 255, 0);
 }
 
 .header-bottom {
     height: 60px;
+    justify-content: center;
+    container-type: inline-size;
+}
+
+.header-bottom[hidden] {
+    display: none;
 }
 
 .snd-ct-logo {
@@ -61,6 +74,142 @@ header {
 .snd-ct-logo-max {
     display: none;
 }
+
+
+
+/* Appointment button */
+
+
+  
+  /* Base button styling */
+  .btn-appointment {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(6px, 2cqi, 10px);
+    box-sizing: border-box;
+    max-block-size: 100%;
+    flex: 0 0 auto;
+    min-inline-size: max-content;
+    white-space: nowrap;
+    background: transparent;
+    color: var(--mint-primary);
+    border: 1.5px solid var(--mint-primary);
+    border-radius: 30px;
+    padding-block: clamp(4px, 1.2cqi, 8px);
+    padding-inline: clamp(10px, 3cqi, 18px);
+    font-family: Inter, system-ui, -apple-system, sans-serif;
+    font-size: clamp(0.7rem, 3.2cqi, 0.875rem);
+    line-height: 1.2;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), color 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+  
+  .btn-icon {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+  }
+  
+  /* 🟢 ONLINE INDICATOR WRAPPER */
+  .status-indicator {
+    position: relative;
+    display: inline-flex;
+    width: 8px;
+    height: 8px;
+    flex-shrink: 0;
+  }
+  
+  /* Core static dot */
+  .status-dot {
+    width: 100%;
+    height: 100%;
+    background-color: var(--mint-primary);
+    border-radius: 50%;
+    z-index: 2;
+    transition: background-color 0.35s ease;
+  }
+  
+  /* Radial pulse ring */
+  .status-pulse {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--mint-primary);
+    border-radius: 50%;
+    animation: live-pulse 2s infinite ease-out;
+    z-index: 1;
+    opacity: 0.6;
+    transition: background-color 0.35s ease, opacity 0.35s ease;
+  }
+  
+  /* ✨ MODERN HOVER EFFECTS */
+  .btn-appointment:hover {
+    background-color: var(--mint-primary);
+    color: var(--mint-dark-text);
+    box-shadow: 0 0 25px 0 var(--mint-glow);
+  }
+  
+  /* Color inversion for indicator components on hover */
+  .btn-appointment:hover .status-dot,
+  .btn-appointment:hover .status-pulse {
+    background-color: var(--mint-dark-text);
+  }
+  
+  .btn-appointment:hover .status-pulse {
+    opacity: 0.3; /* Softens the contrast ring on light background */
+  }
+  
+  .btn-appointment:hover .btn-icon {
+    transform: rotate(5deg) scale(1.05);
+  }
+  
+  .btn-appointment:active {
+    box-shadow: 0 0 12px 0 var(--mint-glow);
+  }
+
+  .btn-appointment:focus-visible {
+    outline: 2px solid var(--mint-primary);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .status-pulse {
+      animation: none;
+    }
+
+    .btn-appointment,
+    .btn-icon,
+    .status-dot,
+    .status-pulse {
+      transition: none;
+    }
+  }
+  
+  /* 🌀 PULSE ANIMATION KEYFRAMES */
+  @keyframes live-pulse {
+    0% {
+      transform: scale(1);
+      opacity: 0.75;
+    }
+    70% {
+      transform: scale(2.8);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(2.8);
+      opacity: 0;
+    }
+  }
+  
+
+
+
 
 @media (min-width: 64em) {
     .snd-ct-logo-min {
@@ -87,12 +236,28 @@ header {
     }
 }
 
-.snd-ct-menu {
+.snd-ct-consultation {
+    container-type: inline-size;
     flex: 1 1 0;
     min-width: 0;
     height: 100%;
     display: flex;
+    justify-content: center;
     align-items: center;
+    overflow: hidden;
+}
+
+.snd-ct-menu {
+    flex: 0 1 auto;
+    min-width: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.snd-ct-menu .snd-list-comp {
+    width: auto;
+    max-width: 100%;
 }
 
 .snd-ct-icons {
@@ -314,6 +479,7 @@ header {
 }
 
 @supports (position-anchor: --foo) {
+
     .snd-menu-drawer {
         position-anchor: --snd-list-hamburger;
         inset: auto;
@@ -329,6 +495,7 @@ header {
         height: auto;
         width: fit-content;
     }
+    
 }
 
 @supports not (position-anchor: --foo) {
@@ -347,8 +514,10 @@ header {
 }
 
 .snd-list-ct {
-    flex: 1 1 0;
+    flex: 0 1 auto;
     min-width: 0;
+    inline-size: var(--snd-list-ct-max-width, auto);
+    max-inline-size: 100%;
     padding: 2px;
     display: flex;
     justify-content: flex-end;
@@ -393,6 +562,25 @@ header {
 
 .snd-list-comp.is-compact .snd-list-hamburger {
     display: flex;
+}
+
+.header-top:has(.snd-list-comp.is-compact) {
+    justify-content: flex-start;
+}
+
+.header-top:has(.snd-list-comp.is-compact) :is(.snd-ct-logo, .snd-ct-consultation, .snd-ct-lang) {
+    display: none;
+}
+
+.header-top:has(.snd-list-comp.is-compact) .snd-ct-icons {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.header-top:has(.snd-list-comp.is-compact) .snd-ct-icons .snd-list-ct {
+    flex: 1 1 0;
+    inline-size: auto;
+    max-inline-size: none;
 }
 
 .snd-list-comp.is-compact .snd-list-more,
@@ -690,3 +878,5 @@ a.snd-list-link:is(:hover, :focus-visible) {
 .brand-vimeo {
     color: #1ab7ea;
 }
+
+

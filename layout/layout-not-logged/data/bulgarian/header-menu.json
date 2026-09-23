@@ -1,0 +1,180 @@
+{
+  "menu": [
+    {
+      "name": "Фейсбук",
+      "label": "Фейсбук",
+      "description": "Секция във Фейсбук",
+      "aria-label": "Фейсбук",
+      "items": [
+        {
+          "name": "Телефон",
+          "label": "Поддръжка",
+          "description": "Обадете се на поддръжката",
+          "aria-label": "Поддръжка",
+          "items": [
+            {
+              "name": "WhatsApp",
+              "label": "WhatsApp",
+              "description": "Чат в WhatsApp",
+              "aria-label": "WhatsApp"
+            },
+            {
+              "name": "Локация",
+              "label": "Офис",
+              "description": "Местоположение на офиса",
+              "aria-label": "Офис"
+            }
+          ]
+        },
+        {
+          "name": "LinkedIn",
+          "label": "Кариери",
+          "description": "Свободни позиции",
+          "aria-label": "Кариери"
+        }
+      ]
+    },
+    {
+      "name": "Инстаграм",
+      "label": "Инстаграм",
+      "description": "Секция в Инстаграм",
+      "aria-label": "Инстаграм",
+      "items": [
+        {
+          "name": "Туитър",
+          "label": "Истории",
+          "description": "Последни истории",
+          "aria-label": "Истории",
+          "items": [
+            {
+              "name": "Фейсбук",
+              "label": "Рийлс",
+              "description": "Кратки видеа",
+              "aria-label": "Рийлс"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Туитър",
+      "label": "Туитър",
+      "description": "Профил в Туитър",
+      "aria-label": "Туитър"
+    },
+    {
+      "name": "LinkedIn",
+      "label": "LinkedIn",
+      "description": "Профил в LinkedIn",
+      "aria-label": "LinkedIn"
+    },
+    {
+      "name": "WhatsApp",
+      "label": "WhatsApp",
+      "description": "Контакт в WhatsApp",
+      "aria-label": "WhatsApp",
+      "items": [
+        {
+          "name": "Телефон",
+          "label": "Обадете ни се",
+          "description": "Телефонен контакт",
+          "aria-label": "Обадете ни се"
+        }
+      ]
+    },
+    {
+      "name": "Локация",
+      "label": "Локации",
+      "description": "Намерете клиника",
+      "aria-label": "Локации"
+    },
+    {
+      "name": "Телефон",
+      "label": "Услуги",
+      "description": "Клинични услуги",
+      "aria-label": "Услуги",
+      "items": [
+        {
+          "name": "Локация",
+          "label": "Работно време",
+          "description": "Работно време на клиниката",
+          "aria-label": "Работно време"
+        },
+        {
+          "name": "LinkedIn",
+          "label": "Екип",
+          "description": "Запознайте се с екипа",
+          "aria-label": "Екип",
+          "items": [
+            {
+              "name": "Anna",
+              "label": "Anna",
+              "description": "Член на екипа Anna",
+              "aria-label": "Anna"
+            },
+            {
+              "name": "Ben",
+              "label": "Ben",
+              "description": "Член на екипа Ben",
+              "aria-label": "Ben"
+            },
+            {
+              "name": "Cara",
+              "label": "Cara",
+              "description": "Член на екипа Cara",
+              "aria-label": "Cara"
+            },
+            {
+              "name": "Diego",
+              "label": "Diego",
+              "description": "Член на екипа Diego",
+              "aria-label": "Diego"
+            },
+            {
+              "name": "Elena",
+              "label": "Elena",
+              "description": "Член на екипа Elena",
+              "aria-label": "Elena"
+            },
+            {
+              "name": "Farid",
+              "label": "Farid",
+              "description": "Член на екипа Farid",
+              "aria-label": "Farid"
+            },
+            {
+              "name": "Gita",
+              "label": "Gita",
+              "description": "Член на екипа Gita",
+              "aria-label": "Gita"
+            },
+            {
+              "name": "Hugo",
+              "label": "Hugo",
+              "description": "Член на екипа Hugo",
+              "aria-label": "Hugo"
+            },
+            {
+              "name": "Ivy",
+              "label": "Ivy",
+              "description": "Член на екипа Ivy",
+              "aria-label": "Ivy"
+            },
+            {
+              "name": "Jules",
+              "label": "Jules",
+              "description": "Член на екипа Jules",
+              "aria-label": "Jules"
+            }
+          ]
+        },
+        {
+          "name": "WhatsApp",
+          "label": "Запазване",
+          "description": "Запазете час",
+          "aria-label": "Запазване"
+        }
+      ]
+    }
+  ]
+}

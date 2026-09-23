@@ -1,0 +1,39 @@
+{
+  "moreList": true,
+  "baseline": "24px",
+  "max-width": "200px",
+  "icons": [
+    {
+      "name": "facebook",
+      "label": "",
+      "description": "This is icon 1",
+      "aria-label": "Icon 1",
+      "link": "#",
+      "color": "#1877F2"
+    },
+    {
+      "name": "instagram",
+      "label": "",
+      "description": "This is icon 2",
+      "aria-label": "Icon 2",
+      "link": "#",
+      "color": "#E4405F"
+    },
+    {
+      "name": "twitter",
+      "label": "",
+      "description": "This is icon 2",
+      "aria-label": "Icon 2",
+      "link": "#",
+      "color": ""
+    },
+    {
+      "name": "linkedin",
+      "label": "",
+      "description": "This is icon 2",
+      "aria-label": "Icon 2",
+      "link": "#",
+      "color": "#0077B5"
+    }
+  ]
+}

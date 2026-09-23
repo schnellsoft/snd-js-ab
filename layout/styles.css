@@ -39,6 +39,19 @@ header {
     color: #f8fafc;
 }
 
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 1440px;
+    color: #f8fafc;
+    border: 1px solid rgb(51, 255, 0);
+    margin-top: var(--header-block-size, 61px);
+}
+
 .header-top, .header-bottom {
     width: 100%;
     height: 60px;

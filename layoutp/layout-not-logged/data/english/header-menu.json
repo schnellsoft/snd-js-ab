@@ -1,0 +1,180 @@
+{
+  "menu": [
+    {
+      "name": "Facebook",
+      "label": "Facebook",
+      "description": "Facebook section",
+      "aria-label": "Facebook",
+      "items": [
+        {
+          "name": "Phone",
+          "label": "Support",
+          "description": "Call support",
+          "aria-label": "Support",
+          "items": [
+            {
+              "name": "WhatsApp",
+              "label": "WhatsApp",
+              "description": "Chat on WhatsApp",
+              "aria-label": "WhatsApp"
+            },
+            {
+              "name": "Location",
+              "label": "Office",
+              "description": "Office location",
+              "aria-label": "Office"
+            }
+          ]
+        },
+        {
+          "name": "LinkedIn",
+          "label": "Careers",
+          "description": "Open roles",
+          "aria-label": "Careers"
+        }
+      ]
+    },
+    {
+      "name": "Instagram",
+      "label": "Instagram",
+      "description": "Instagram section",
+      "aria-label": "Instagram",
+      "items": [
+        {
+          "name": "Twitter",
+          "label": "Stories",
+          "description": "Latest stories",
+          "aria-label": "Stories",
+          "items": [
+            {
+              "name": "Facebook",
+              "label": "Reels",
+              "description": "Short videos",
+              "aria-label": "Reels"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Twitter",
+      "label": "Twitter",
+      "description": "Twitter profile",
+      "aria-label": "Twitter"
+    },
+    {
+      "name": "LinkedIn",
+      "label": "LinkedIn",
+      "description": "LinkedIn profile",
+      "aria-label": "LinkedIn"
+    },
+    {
+      "name": "WhatsApp",
+      "label": "WhatsApp",
+      "description": "WhatsApp contact",
+      "aria-label": "WhatsApp",
+      "items": [
+        {
+          "name": "Phone",
+          "label": "Call us",
+          "description": "Phone contact",
+          "aria-label": "Call us"
+        }
+      ]
+    },
+    {
+      "name": "Location",
+      "label": "Locations",
+      "description": "Find a clinic",
+      "aria-label": "Locations"
+    },
+    {
+      "name": "Phone",
+      "label": "Services",
+      "description": "Clinic services",
+      "aria-label": "Services",
+      "items": [
+        {
+          "name": "Location",
+          "label": "Hours",
+          "description": "Opening hours",
+          "aria-label": "Hours"
+        },
+        {
+          "name": "LinkedIn",
+          "label": "Team",
+          "description": "Meet the team",
+          "aria-label": "Team",
+          "items": [
+            {
+              "name": "Anna",
+              "label": "Anna",
+              "description": "Team member Anna",
+              "aria-label": "Anna"
+            },
+            {
+              "name": "Ben",
+              "label": "Ben",
+              "description": "Team member Ben",
+              "aria-label": "Ben"
+            },
+            {
+              "name": "Cara",
+              "label": "Cara",
+              "description": "Team member Cara",
+              "aria-label": "Cara"
+            },
+            {
+              "name": "Diego",
+              "label": "Diego",
+              "description": "Team member Diego",
+              "aria-label": "Diego"
+            },
+            {
+              "name": "Elena",
+              "label": "Elena",
+              "description": "Team member Elena",
+              "aria-label": "Elena"
+            },
+            {
+              "name": "Farid",
+              "label": "Farid",
+              "description": "Team member Farid",
+              "aria-label": "Farid"
+            },
+            {
+              "name": "Gita",
+              "label": "Gita",
+              "description": "Team member Gita",
+              "aria-label": "Gita"
+            },
+            {
+              "name": "Hugo",
+              "label": "Hugo",
+              "description": "Team member Hugo",
+              "aria-label": "Hugo"
+            },
+            {
+              "name": "Ivy",
+              "label": "Ivy",
+              "description": "Team member Ivy",
+              "aria-label": "Ivy"
+            },
+            {
+              "name": "Jules",
+              "label": "Jules",
+              "description": "Team member Jules",
+              "aria-label": "Jules"
+            }
+          ]
+        },
+        {
+          "name": "WhatsApp",
+          "label": "Booking",
+          "description": "Book an appointment",
+          "aria-label": "Booking"
+        }
+      ]
+    }
+  ]
+}

@@ -51,6 +51,15 @@ function placeButton() {
   bottom.hidden = false;
 }
 
+/** Match main's top margin to the header's current border-box height. */
+function syncMainOffset() {
+  if (!(header instanceof HTMLElement)) {
+    return;
+  }
+  const height = header.getBoundingClientRect().height;
+  document.documentElement.style.setProperty("--header-block-size", `${height}px`);
+}
+
 /** Load the appointment label for the active language, then place the button. */
 async function loadAppointmentText() {
   if (!(label instanceof HTMLElement) || !(button instanceof HTMLElement)) {
@@ -71,11 +80,13 @@ async function loadAppointmentText() {
     return;
   }
   placeButton();
+  syncMainOffset();
 }
 
 if (header instanceof HTMLElement) {
   const observer = new ResizeObserver(() => {
     placeButton();
+    syncMainOffset();
   });
   observer.observe(header);
   if (consultation instanceof HTMLElement) {
@@ -85,6 +96,7 @@ if (header instanceof HTMLElement) {
 
 window.matchMedia("(orientation: portrait) and (max-width: 48em)").addEventListener("change", () => {
   placeButton();
+  syncMainOffset();
 });
 
 onLanguageChange(() => {

@@ -1,0 +1,237 @@
+{
+  "moreList": true,
+  "baseline": "24px",
+  "max-width": "400px",
+  "menu": [
+    {
+      "name": "facebook",
+      "label": "Facebook",
+      "description": "Facebook section",
+      "aria-label": "Facebook",
+      "link": "#facebook",
+      "color": "#1877F2",
+      "items": [
+        {
+          "name": "phonecall",
+          "label": "Support",
+          "description": "Call support",
+          "aria-label": "Support",
+          "link": "#support",
+          "color": "",
+          "items": [
+            {
+              "name": "whatsapp",
+              "label": "WhatsApp",
+              "description": "Chat on WhatsApp",
+              "aria-label": "WhatsApp",
+              "link": "#whatsapp",
+              "color": "#25D366"
+            },
+            {
+              "name": "locationxx",
+              "label": "Office",
+              "description": "Office location",
+              "aria-label": "Office",
+              "link": "#office",
+              "color": ""
+            }
+          ]
+        },
+        {
+          "name": "linkedin",
+          "label": "Careers",
+          "description": "Open roles",
+          "aria-label": "Careers",
+          "link": "#careers",
+          "color": "#0077B5"
+        }
+      ]
+    },
+    {
+      "name": "instagram",
+      "label": "Instagram",
+      "description": "Instagram section",
+      "aria-label": "Instagram",
+      "link": "#instagram",
+      "color": "#E4405F",
+      "items": [
+        {
+          "name": "twitter",
+          "label": "Stories",
+          "description": "Latest stories",
+          "aria-label": "Stories",
+          "link": "#stories",
+          "color": "",
+          "items": [
+            {
+              "name": "facebook",
+              "label": "Reels",
+              "description": "Short videos",
+              "aria-label": "Reels",
+              "link": "#reels",
+              "color": "#1877F2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "twitter",
+      "label": "Twitter",
+      "description": "Twitter profile",
+      "aria-label": "Twitter",
+      "link": "#twitter",
+      "color": ""
+    },
+    {
+      "name": "linkedin",
+      "label": "LinkedIn",
+      "description": "LinkedIn profile",
+      "aria-label": "LinkedIn",
+      "link": "#linkedin",
+      "color": "#0077B5"
+    },
+    {
+      "name": "whatsapp",
+      "label": "WhatsApp",
+      "description": "WhatsApp contact",
+      "aria-label": "WhatsApp",
+      "link": "#chat",
+      "color": "#25D366",
+      "items": [
+        {
+          "name": "phonecall",
+          "label": "Call us",
+          "description": "Phone contact",
+          "aria-label": "Call us",
+          "link": "#call",
+          "color": ""
+        }
+      ]
+    },
+    {
+      "name": "location",
+      "label": "Locations",
+      "description": "Find a clinic",
+      "aria-label": "Locations",
+      "link": "#locations",
+      "color": ""
+    },
+    {
+      "name": "phonecall",
+      "label": "Services",
+      "description": "Clinic services",
+      "aria-label": "Services",
+      "link": "#services",
+      "color": "",
+      "items": [
+        {
+          "name": "location",
+          "label": "Hours",
+          "description": "Opening hours",
+          "aria-label": "Hours",
+          "link": "#hours",
+          "color": ""
+        },
+        {
+          "name": "linkedin",
+          "label": "Team",
+          "description": "Meet the team",
+          "aria-label": "Team",
+          "link": "#team",
+          "color": "#0077B5",
+          "items": [
+            {
+              "name": "facebook",
+              "label": "Anna",
+              "description": "Team member Anna",
+              "aria-label": "Anna",
+              "link": "#anna",
+              "color": "#1877F2"
+            },
+            {
+              "name": "instagram",
+              "label": "Ben",
+              "description": "Team member Ben",
+              "aria-label": "Ben",
+              "link": "#ben",
+              "color": "#E4405F"
+            },
+            {
+              "name": "twitter",
+              "label": "Cara",
+              "description": "Team member Cara",
+              "aria-label": "Cara",
+              "link": "#cara",
+              "color": ""
+            },
+            {
+              "name": "linkedin",
+              "label": "Diego",
+              "description": "Team member Diego",
+              "aria-label": "Diego",
+              "link": "#diego",
+              "color": "#0077B5"
+            },
+            {
+              "name": "whatsapp",
+              "label": "Elena",
+              "description": "Team member Elena",
+              "aria-label": "Elena",
+              "link": "#elena",
+              "color": "#25D366"
+            },
+            {
+              "name": "phonecall",
+              "label": "Farid",
+              "description": "Team member Farid",
+              "aria-label": "Farid",
+              "link": "#farid",
+              "color": ""
+            },
+            {
+              "name": "location",
+              "label": "Gita",
+              "description": "Team member Gita",
+              "aria-label": "Gita",
+              "link": "#gita",
+              "color": ""
+            },
+            {
+              "name": "facebook",
+              "label": "Hugo",
+              "description": "Team member Hugo",
+              "aria-label": "Hugo",
+              "link": "#hugo",
+              "color": "#1877F2"
+            },
+            {
+              "name": "instagram",
+              "label": "Ivy",
+              "description": "Team member Ivy",
+              "aria-label": "Ivy",
+              "link": "#ivy",
+              "color": "#E4405F"
+            },
+            {
+              "name": "twitter",
+              "label": "Jules",
+              "description": "Team member Jules",
+              "aria-label": "Jules",
+              "link": "#jules",
+              "color": ""
+            }
+          ]
+        },
+        {
+          "name": "whatsapp",
+          "label": "Booking",
+          "description": "Book an appointment",
+          "aria-label": "Booking",
+          "link": "#booking",
+          "color": "#25D366"
+        }
+      ]
+    }
+  ]
+}

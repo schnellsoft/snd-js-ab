@@ -302,7 +302,7 @@ main {
     height: 48px;
     padding: 10px;
     box-sizing: border-box;
-    border: 1px solid #ccc;
+    border: 0px solid #ccc;
     border-radius: 10px;
     background: none;
     text-decoration: none;
@@ -355,7 +355,7 @@ main {
     padding: 0 8px;
     color: #f4f4f4;
     background: #1e1e1e;
-    border: 1px solid #ceb2b2;
+    border: 0px solid #ceb2b2;
     border-radius: 10px;
     font: inherit;
     cursor: pointer;

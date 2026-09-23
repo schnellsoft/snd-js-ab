@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+  <defs>
+    <linearGradient id="ct-login-grad" x1="3" y1="2" x2="21" y2="22" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9dffc4" />
+      <stop offset="1" stop-color="#12b8a8" />
+    </linearGradient>
+  </defs>
+  <circle cx="10.1" cy="7" r="4.35" fill="url(#ct-login-grad)" />
+  <path
+    fill="url(#ct-login-grad)"
+    d="M3.2 21.2c0-4.15 3.05-7.05 6.9-7.05 1.55 0 2.98.48 4.12 1.28-1.55.55-2.67 2.02-2.67 3.77v4.2H3.2Z"
+  />
+  <path
+    fill="#000"
+    d="M16.15 11.05c-1.55 0-2.8 1.25-2.8 2.8v.75h-.75c-1.55 0-2.8 1.25-2.8 2.8s1.25 2.8 2.8 2.8h.75v.75c0 1.55 1.25 2.8 2.8 2.8s2.8-1.25 2.8-2.8v-.75h.75c1.55 0 2.8-1.25 2.8-2.8s-1.25-2.8-2.8-2.8h-.75v-.75c0-1.55-1.25-2.8-2.8-2.8Z"
+  />
+  <path
+    fill="url(#ct-login-grad)"
+    d="M16.15 12.15c-.94 0-1.7.76-1.7 1.7v1.3h-1.3c-.94 0-1.7.76-1.7 1.7s.76 1.7 1.7 1.7h1.3v1.3c0 .94.76 1.7 1.7 1.7s1.7-.76 1.7-1.7v-1.3h1.3c.94 0 1.7-.76 1.7-1.7s-.76-1.7-1.7-1.7h-1.3v-1.3c0-.94-.76-1.7-1.7-1.7Z"
+  />
+</svg>

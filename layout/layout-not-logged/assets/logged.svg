@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+  <defs>
+    <linearGradient id="ct-logged-grad" x1="3" y1="2" x2="21" y2="22" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9dffc4" />
+      <stop offset="1" stop-color="#12b8a8" />
+    </linearGradient>
+  </defs>
+  <circle cx="12" cy="7" r="4.35" fill="url(#ct-logged-grad)" />
+  <path
+    fill="url(#ct-logged-grad)"
+    d="M4 22c0-4.35 3.6-7.25 8-7.25S20 17.65 20 22Z"
+  />
+</svg>

@@ -13,7 +13,8 @@ body {
     align-items: center;
     flex-direction: column;
     height: 100vh;
-    
+    font-family: Roboto, sans-serif;
+    font-size-adjust: from-font;
 }
 
 header {
@@ -111,7 +112,6 @@ main {
     border-radius: 30px;
     padding-block: clamp(4px, 1.2cqi, 8px);
     padding-inline: clamp(10px, 3cqi, 18px);
-    font-family: Inter, system-ui, -apple-system, sans-serif;
     font-size: clamp(0.7rem, 3.2cqi, 0.875rem);
     line-height: 1.2;
     font-weight: 600;
@@ -119,6 +119,10 @@ main {
     cursor: pointer;
     position: relative;
     transition: background-color 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), color 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+
+  .header-bottom .btn-appointment {
+    font-size: clamp(1.125rem, 3.5cqi, 1.5rem);
   }
   
   .btn-icon {
@@ -355,7 +359,7 @@ main {
     padding: 0 8px;
     color: #f4f4f4;
     background: #1e1e1e;
-    border: 1px solid #ceb2b2;
+    border: 0.5px solid #ceb2b26e;
     border-radius: 10px;
     font: inherit;
     cursor: pointer;

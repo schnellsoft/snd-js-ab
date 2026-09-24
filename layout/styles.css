@@ -12,7 +12,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100dvh;
     font-family: Roboto, sans-serif;
     font-size-adjust: from-font;
 }
@@ -42,15 +42,15 @@ header {
 
 main {
     width: 100%;
-    height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     max-width: 1440px;
     color: #f8fafc;
     border: 1px solid rgb(51, 255, 0);
     margin-top: var(--header-block-size, 61px);
+    height: 2000px;
 }
 
 .header-top, .header-bottom {
@@ -112,7 +112,7 @@ main {
     border-radius: 30px;
     padding-block: clamp(4px, 1.2cqi, 8px);
     padding-inline: clamp(10px, 3cqi, 18px);
-    font-size: clamp(0.7rem, 3.2cqi, 0.875rem);
+    font-size: clamp(0.8125rem, 3.2cqi, 0.9375rem);
     line-height: 1.2;
     font-weight: 600;
     letter-spacing: 0.02em;
@@ -122,7 +122,11 @@ main {
   }
 
   .header-bottom .btn-appointment {
-    font-size: clamp(1.125rem, 3.5cqi, 1.5rem);
+    min-inline-size: 0;
+    max-inline-size: 100%;
+    gap: clamp(5px, 1.5cqi, 10px);
+    padding-inline: clamp(8px, 3cqi, 18px);
+    font-size: clamp(1rem, 5cqi, 1.5rem);
   }
   
   .btn-icon {
@@ -894,6 +898,629 @@ a.snd-list-link:is(:hover, :focus-visible) {
 
 .brand-vimeo {
     color: #1ab7ea;
+}
+
+/* Services cards */
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    min-block-size: calc(100dvh - var(--header-block-size, 61px));
+    padding: 0.75rem 1rem 0;
+}
+
+.main-content-services {
+    --services-component-min-block-size: 39rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
+    width: 100%;
+    min-height: var(--services-component-min-block-size);
+}
+
+svg.icon-sprite {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.ct-card-all {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.25rem;
+    flex: 1 1 0;
+    width: 100%;
+    min-height: var(--services-component-min-block-size);
+    padding: 0.75rem 0;
+    overflow: hidden;
+}
+
+.ct-card-all-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    flex: 0 0 auto;
+    width: 100%;
+    min-width: 0;
+    position: relative;
+    z-index: 4;
+    background-color: #1e1e1e;
+}
+
+.ct-card-all-header-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    width: 100%;
+    min-width: 0;
+}
+
+@media (min-width: 42rem) {
+    .ct-card-all-header-controls {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        align-items: end;
+    }
+
+    .ct-card-all-search {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (orientation: landscape) and (max-height: 34rem) {
+    .main-content-services {
+        --services-component-min-block-size: 22.5rem;
+        padding-block: 0.4rem;
+    }
+
+    .ct-card-all {
+        gap: 0.45rem;
+        padding-block: 0.35rem;
+    }
+
+    .ct-card-all-header,
+    .ct-card-all-header-controls {
+        gap: 0.35rem;
+    }
+
+    .ct-card-all-header-controls {
+        display: grid;
+        grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1fr);
+        align-items: end;
+    }
+
+    .ct-card-all-search {
+        grid-column: auto;
+    }
+
+    .ct-field-label {
+        font-size: 0.68rem;
+    }
+
+    .ct-search-input,
+    .ct-combo,
+    .ct-search-submit,
+    .ct-search-exit {
+        min-height: 2.1rem;
+    }
+
+    .ct-search-submit,
+    .ct-search-exit {
+        width: 2.1rem;
+    }
+
+    .ct-nav-position {
+        font-size: 0.78rem;
+    }
+
+    .ct-card-all-main {
+        --ct-card-min-px: 200;
+        gap: 0.65rem;
+    }
+
+    .ct-card {
+        flex-basis: 12.5rem;
+    }
+}
+
+@media (max-height: 34rem) {
+    .ct-card-front-face,
+    .ct-card-back-face {
+        padding: 0.75rem 0.85rem 0.7rem;
+        gap: 0.55rem;
+    }
+
+    .ct-card-price {
+        font-size: clamp(1.1rem, 4vw, 1.45rem);
+    }
+
+    .ct-card-select {
+        min-height: 2.05rem;
+    }
+
+    .ct-card-bg {
+        width: 6.5rem;
+        height: 6.5rem;
+    }
+}
+
+@supports (container-type: size) {
+    @container (max-height: 16rem) {
+        .ct-card-front-face,
+        .ct-card-back-face {
+            padding: 0.7rem 0.8rem 0.6rem;
+            gap: 0.45rem;
+        }
+
+        .ct-card-price {
+            font-size: 1.2rem;
+        }
+
+        .ct-card-foot {
+            gap: 0.5rem;
+            padding-block-start: 0.5rem;
+        }
+
+        .ct-card-select {
+            min-height: 1.95rem;
+            font-size: 0.75rem;
+        }
+
+        .ct-card-bg {
+            width: 5.5rem;
+            height: 5.5rem;
+        }
+    }
+}
+
+.ct-card-all-header-position {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    width: 100%;
+    min-width: 0;
+}
+
+.left-button,
+.right-button {
+    appearance: none;
+    flex-shrink: 0;
+    width: 2.25rem;
+    height: 2.25rem;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #cccccc;
+}
+
+.left-button:hover,
+.right-button:hover {
+    color: #7ee0bc;
+    background-color: rgb(62 180 137 / 0.14);
+}
+
+.left-button:focus-visible,
+.right-button:focus-visible {
+    outline: 2px solid #3eb489;
+    outline-offset: 2px;
+}
+
+.left-button svg,
+.right-button svg {
+    width: 24px;
+    height: 24px;
+    max-width: none;
+    display: block;
+    flex-shrink: 0;
+    fill: currentColor;
+}
+
+.ct-nav-position {
+    margin: 0;
+    min-inline-size: 12ch;
+    text-align: center;
+    font-size: clamp(0.82rem, 2.6vw, 0.95rem);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.06em;
+    color: #7ee0bc;
+}
+
+.ct-card-all-main {
+    --ct-card-columns: 1;
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    min-width: 0;
+    min-height: 14rem;
+    padding-inline: 0.5rem;
+    overflow: hidden;
+    container-type: size;
+    --ct-card-min-px: 240;
+    /* height: auto; */
+}
+
+.ct-card {
+    position: relative;
+    box-sizing: border-box;
+    flex: 1 1 15rem;
+    width: auto;
+    max-width: 350px;
+    min-width: 0;
+    min-block-size: 14rem;
+    height: min(17.5rem, 100%);
+    max-height: 100%;
+    perspective: 52rem;
+    perspective-origin: 50% 46%;
+    transform-style: preserve-3d;
+    touch-action: pan-y;
+    container-type: size;
+}
+
+@media (min-width: 64em) {
+    .main-content-services {
+        --services-component-min-block-size: 48rem;
+    }
+
+    .ct-card-all-main {
+        display: flex;
+        flex-flow: row wrap;
+        align-content: stretch;
+        align-items: stretch;
+        justify-content: center;
+        min-block-size: 33rem;
+    }
+
+    .ct-card {
+        flex: 0 1 calc(
+            (100% - (var(--ct-card-columns) - 1) * 1rem) /
+            var(--ct-card-columns)
+        );
+        width: auto;
+        max-width: none;
+        height: calc((100% - 1rem) / 2);
+        min-block-size: 16rem;
+    }
+}
+
+.ct-card[hidden] {
+    display: none;
+}
+
+.ct-card-all-search,
+.ct-card-all-combo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.ct-card-all-search {
+    position: relative;
+}
+
+.ct-search {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.ct-field-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #7ee0bc;
+}
+
+.ct-search-row {
+    display: flex;
+    align-items: stretch;
+    gap: 0.4rem;
+}
+
+.ct-search-input,
+.ct-combo {
+    width: 100%;
+    min-height: 2.6rem;
+    padding: 0.55rem 0.8rem;
+    border: none;
+    border-radius: 0.7rem;
+    color: #d8f5e9;
+    background: #1a1a1a;
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, #3eb489 32%, #2a2a2a);
+    outline: none;
+}
+
+.ct-search-input::placeholder,
+.ct-combo:has(option[value=""]:checked) {
+    color: color-mix(in srgb, #7ee0bc 55%, #888);
+}
+
+.ct-search-input:focus,
+.ct-combo:focus {
+    box-shadow: inset 0 0 0 1px #3eb489, 0 0 0 3px rgb(62 180 137 / 0.22);
+}
+
+.ct-search-submit,
+.ct-search-exit {
+    appearance: none;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.6rem;
+    border: none;
+    border-radius: 0.7rem;
+    color: #121212;
+    background: #3eb489;
+    cursor: pointer;
+}
+
+.ct-search-exit {
+    color: #d8f5e9;
+    background: color-mix(in srgb, #3eb489 22%, #1a1a1a);
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, #3eb489 32%, #2a2a2a);
+}
+
+.ct-search-exit:hover {
+    background: color-mix(in srgb, #3eb489 34%, #1a1a1a);
+}
+
+.ct-search-exit[hidden] {
+    display: none;
+}
+
+.ct-search-submit:focus-visible,
+.ct-search-exit:focus-visible {
+    outline: 2px solid #7ee0bc;
+    outline-offset: 2px;
+}
+
+.ct-search-submit svg,
+.ct-search-exit svg {
+    width: 20px;
+    height: 20px;
+    max-width: none;
+    display: block;
+    fill: currentColor;
+}
+
+.ct-combo {
+    appearance: none;
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%237ee0bc'%3E%3Cpath d='M6.5 9.5 12 15l5.5-5.5-1.4-1.4L12 12.2 7.9 8.1 6.5 9.5Z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.7rem center;
+    background-size: 1.1rem;
+    padding-inline-end: 2.2rem;
+}
+
+@supports (appearance: base-select) {
+    .ct-combo,
+    .ct-combo::picker(select) {
+        appearance: base-select;
+    }
+
+    .ct-combo {
+        background-image: none;
+        padding-inline-end: 0.8rem;
+    }
+
+    .ct-combo::picker-icon {
+        color: #7ee0bc;
+    }
+
+    .ct-combo::picker(select) {
+        color: #d8f5e9;
+        background: #1a1a1a;
+        border: 1px solid color-mix(in srgb, #3eb489 32%, #2a2a2a);
+        border-radius: 0.7rem;
+        padding: 0.35rem;
+    }
+
+    .ct-combo option {
+        padding: 0.5rem 0.65rem;
+        border-radius: 0.45rem;
+        color: #d8f5e9;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+    .ct-combo option:hover,
+    .ct-combo option:checked {
+        background: color-mix(in srgb, #3eb489 22%, #1a1a1a);
+    }
+
+    .ct-combo option::checkmark {
+        color: #3eb489;
+    }
+}
+
+.ct-card-inner {
+    position: relative;
+    min-block-size: 0;
+    height: 100%;
+    transform-origin: 50% 50%;
+    transform-style: preserve-3d;
+    --ct-shade: 0;
+}
+
+.ct-card-inner-live {
+    will-change: transform;
+}
+
+.ct-card-front-face,
+.ct-card-back-face {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.25rem;
+    box-sizing: border-box;
+    padding: 1.5rem 1.5rem 1.25rem;
+    overflow: hidden;
+    border: 1px solid color-mix(in srgb, #3eb489 28%, #2a2a2a);
+    border-radius: 1.25rem;
+    color: #3eb489;
+    color-scheme: dark;
+    background-color: #171717;
+    background-image:
+        linear-gradient(180deg, rgb(62 180 137 / 0.1), transparent 42%),
+        linear-gradient(155deg, #2b2b2b 0%, #171717 100%);
+    box-shadow:
+        0 0 0 1px color-mix(in srgb, #3eb489 26%, transparent),
+        0 10px 20px rgb(0 0 0 / 0.3),
+        0 20px 50px rgb(0 0 0 / 0.5);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.ct-card-front-face::after,
+.ct-card-back-face::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+    border-radius: inherit;
+    background: rgb(0 0 0 / var(--ct-shade, 0));
+}
+
+.ct-card-front-face {
+    transform: rotateY(0deg) translateZ(1px);
+}
+
+.ct-card-back-face {
+    transform: rotateY(180deg) translateZ(1px);
+}
+
+.ct-card-bg {
+    position: absolute;
+    z-index: 0;
+    top: 50%;
+    right: 0;
+    width: 10.5rem;
+    height: 10.5rem;
+    max-width: none;
+    transform: translateY(-50%);
+    color: #2a7a5d;
+    fill: currentColor;
+    opacity: 1;
+    pointer-events: none;
+}
+
+.ct-card-title,
+.ct-card-price,
+.ct-card-foot,
+.ct-card-select {
+    position: relative;
+    z-index: 1;
+}
+
+.ct-card-title,
+.ct-card-price {
+    text-shadow: 0 0 4px rgb(0 0 0 / 0.8);
+}
+
+.ct-card-title {
+    margin: 0;
+    max-inline-size: 100%;
+    font-size: clamp(1.05rem, 4.2vw, 1.35rem);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    line-height: 1.25;
+    block-size: 3.75em;
+    flex: 0 0 3.75em;
+    overflow-wrap: anywhere;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: clip;
+    color: #3eb489;
+}
+
+.ct-card-foot {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-block-start: auto;
+    padding-block-start: 0.9rem;
+    flex: 0 0 auto;
+    border-block-start: 1px solid color-mix(in srgb, #3eb489 28%, transparent);
+}
+
+.ct-card-price {
+    margin: 0;
+    font-size: clamp(1.35rem, 5vw, 1.85rem);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    color: #7ee0bc;
+}
+
+.ct-card-select {
+    appearance: none;
+    width: 100%;
+    min-height: 2.5rem;
+    padding: 0.55rem 0.9rem;
+    border: none;
+    border-radius: 0.7rem;
+    color: #121212;
+    background: #3eb489;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.ct-card-select:hover {
+    background: #7ee0bc;
+}
+
+.ct-card-select:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgb(126 224 188 / 0.35);
+}
+
+.ct-card-select:active {
+    background: color-mix(in srgb, #3eb489 82%, #121212);
+}
+
+@media (max-height: 34rem) {
+    .ct-card-title {
+        block-size: 2.5em;
+        flex-basis: 2.5em;
+        font-size: clamp(0.92rem, 3.4vw, 1.15rem);
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+    }
 }
 
 
